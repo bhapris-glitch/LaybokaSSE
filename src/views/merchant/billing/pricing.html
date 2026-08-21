@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Layboka AI Pricing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#690005",
+                        "inverse-primary": "#a63b00",
+                        "surface-bright": "#1F2223",
+                        "primary-container": "#ff5f00",
+                        "on-secondary-container": "#00311f",
+                        "surface": "#121415",
+                        "primary-fixed-dim": "#ffb599",
+                        "on-secondary-fixed-variant": "#005236",
+                        "surface-variant": "#333536",
+                        "surface-container-high": "#282a2b",
+                        "primary-fixed": "#ffdbce",
+                        "on-background": "#e2e2e3",
+                        "ai-glow": "#00F5FF",
+                        "on-secondary-fixed": "#002113",
+                        "outline": "#ab8a7d",
+                        "surface-container-low": "#1a1c1d",
+                        "surface-container-lowest": "#0c0e0f",
+                        "error-container": "#93000a",
+                        "success-green": "#10B981",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-primary": "#5a1c00",
+                        "surface-container-highest": "#333536",
+                        "on-primary-fixed": "#370e00",
+                        "inverse-surface": "#e2e2e3",
+                        "brand-orange": "#FF5F00",
+                        "tertiary": "#00dce5",
+                        "on-primary-container": "#531a00",
+                        "outline-variant": "#5b4137",
+                        "on-tertiary-fixed": "#002021",
+                        "tertiary-fixed": "#63f7ff",
+                        "on-tertiary": "#003739",
+                        "surface-tint": "#ffb599",
+                        "on-error-container": "#ffdad6",
+                        "background": "#121415",
+                        "on-surface-variant": "#e4bfb1",
+                        "tertiary-container": "#00a4ab",
+                        "on-primary-fixed-variant": "#7f2b00",
+                        "surface-dim": "#121415",
+                        "surface-near-black": "#0A0C0D",
+                        "primary": "#ffb599",
+                        "secondary": "#4edea3",
+                        "tertiary-fixed-dim": "#00dce5",
+                        "secondary-container": "#00a572",
+                        "on-tertiary-fixed-variant": "#004f53",
+                        "surface-container": "#141718",
+                        "on-secondary": "#003824",
+                        "on-surface": "#e2e2e3",
+                        "on-tertiary-container": "#003235",
+                        "inverse-on-surface": "#2f3132",
+                        "error": "#ffb4ab",
+                        "secondary-fixed": "#6ffbbe"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["JetBrains Mono", "monospace"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "title-md": ["Hanken Grotesk", "sans-serif"],
+                        "headline-lg-mobile": ["Hanken Grotesk", "sans-serif"],
+                        "headline-lg": ["Hanken Grotesk", "sans-serif"],
+                        "display-lg": ["Hanken Grotesk", "sans-serif"],
+                        "body-sm": ["Inter", "sans-serif"],
+                        "data-mono": ["JetBrains Mono", "monospace"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "data-mono": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+</head>
+<body class="bg-surface-near-black text-on-surface font-body-lg antialiased selection:bg-brand-orange selection:text-black">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-surface font-body-lg text-body-lg docked full-width top-0 bg-surface dark:bg-surface border-b border-white/10 flat no shadows flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20 fixed z-50">
+<div class="flex items-center gap-12">
+<a class="font-headline-lg text-headline-lg font-bold text-brand-orange dark:text-brand-orange" href="#">Layboka AI</a>
+<div class="hidden md:flex gap-8">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-brand-orange transition-colors duration-200" href="#">Product</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-brand-orange transition-colors duration-200" href="#">Solutions</a>
+<a class="text-brand-orange font-bold border-b-2 border-brand-orange pb-1 hover:text-brand-orange transition-colors duration-200" href="#">Pricing</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-brand-orange transition-colors duration-200" href="#">Resources</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<a class="text-on-surface-variant hover:text-brand-orange transition-colors duration-200" href="#">Login</a>
+<a class="bg-brand-orange text-black px-6 py-2 rounded font-medium hover:bg-opacity-90 transition-colors" href="#">Get Started</a>
+</div>
+</nav>
+<main class="pt-32 pb-24">
+<!-- Header -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center mb-16">
+<h1 class="font-display-lg text-display-lg mb-4">Precision Engineering for Commerce</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Scale your operations with raw computational power. Choose the tier that matches your trajectory.</p>
+</section>
+<!-- Pricing Grid -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+<!-- Starter -->
+<div class="bg-surface-container border border-white/10 rounded-lg p-6 flex flex-col hover:border-brand-orange/50 transition-colors">
+<h3 class="font-title-md text-title-md mb-2">Starter</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 h-10">Essential AI recovery for small stores.</p>
+<div class="mb-6 border-b border-white/10 pb-6">
+<span class="font-display-lg text-display-lg">$25</span>
+<span class="text-on-surface-variant">/mo</span>
+</div>
+<ul class="flex-grow space-y-4 mb-8">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-success-green text-sm mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-sm text-body-sm">Automated Recovery Sequences</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-success-green text-sm mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-sm text-body-sm">Basic Analytics Dashboard</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-success-green text-sm mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-sm text-body-sm">Standard Support</span>
+</li>
+</ul>
+<button class="w-full border border-surface-variant text-on-surface hover:bg-surface-variant py-3 rounded font-medium transition-colors">Select Starter</button>
+</div>
+<!-- Growth (Most Popular) -->
+<div class="bg-surface-bright border border-brand-orange rounded-lg p-6 flex flex-col relative shadow-[0_0_12px_rgba(255,95,0,0.2)]">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-orange text-black px-3 py-1 rounded-full font-label-caps text-label-caps whitespace-nowrap">
+                    MOST POPULAR
+                </div>
+<h3 class="font-title-md text-title-md mb-2 text-brand-orange">Growth</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 h-10">Advanced sales logic and CRM sync.</p>
+<div class="mb-6 border-b border-white/10 pb-6">
+<span class="font-display-lg text-display-lg">$59</span>
+<span class="text-on-surface-variant">/mo</span>
+</div>
+<ul class="flex-grow space-y-4 mb-8">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-success-green text-sm mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-sm text-body-sm">Everything in Starter</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-success-green text-sm mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-sm text-body-sm">Advanced Sales Logic Engine</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-success-green text-sm mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-sm text-body-sm">Full CRM Synchronization</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-success-green text-sm mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-sm text-body-sm">Priority Support</span>
+</li>
+</ul>
+<button class="w-full bg-brand-orange text-black hover:bg-opacity-90 py-3 rounded font-medium transition-colors">Select Growth</button>
+</div>
+<!-- Premium -->
+<div class="bg-surface-container border border-white/10 rounded-lg p-6 flex flex-col hover:border-brand-orange/50 transition-colors">
+<h3 class="font-title-md text-title-md mb-2">Premium</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 h-10">Full omnichannel AI brain, voice executive.</p>
+<div class="mb-6 border-b border-white/10 pb-6">
+<span class="font-display-lg text-display-lg">$149</span>
+<span class="text-on-surface-variant">/mo</span>
+</div>
+<ul class="flex-grow space-y-4 mb-8">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-success-green text-sm mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-sm text-body-sm">Everything in Growth</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-success-green text-sm mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-sm text-body-sm">Omnichannel AI Brain</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-success-green text-sm mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-sm text-body-sm">Voice Executive Interface</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-success-green text-sm mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-sm text-body-sm">Enterprise Analytics Suite</span>
+</li>
+</ul>
+<button class="w-full border border-surface-variant text-on-surface hover:bg-surface-variant py-3 rounded font-medium transition-colors">Select Premium</button>
+</div>
+<!-- Enterprise -->
+<div class="bg-surface-container border border-white/10 rounded-lg p-6 flex flex-col hover:border-brand-orange/50 transition-colors">
+<h3 class="font-title-md text-title-md mb-2">Enterprise</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6 h-10">Custom deployment for high-volume stores.</p>
+<div class="mb-6 border-b border-white/10 pb-6 flex items-center h-[56px]">
+<span class="font-headline-lg text-headline-lg">Custom</span>
+</div>
+<ul class="flex-grow space-y-4 mb-8">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-success-green text-sm mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-sm text-body-sm">Dedicated AI Instance</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-success-green text-sm mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-sm text-body-sm">Custom Integration Mapping</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-success-green text-sm mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-sm text-body-sm">Dedicated Success Manager</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-success-green text-sm mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-sm text-body-sm">SLA Guarantee</span>
+</li>
+</ul>
+<button class="w-full bg-transparent border border-success-green text-success-green hover:bg-success-green hover:text-black py-3 rounded font-medium transition-colors">Contact Sales</button>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop mb-24">
+<h2 class="font-headline-lg text-headline-lg text-center mb-12">Pricing FAQ</h2>
+<div class="space-y-4">
+<div class="bg-surface-container border border-white/10 rounded-lg p-6">
+<h4 class="font-title-md text-title-md mb-2 flex items-center justify-between cursor-pointer">
+                        How does the CRM sync work?
+                        <span class="material-symbols-outlined">expand_more</span>
+</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 hidden">Our AI seamlessly connects with major CRM platforms via API, ensuring real-time bidirectional data flow for absolute precision.</p>
+</div>
+<div class="bg-surface-container border border-white/10 rounded-lg p-6">
+<h4 class="font-title-md text-title-md mb-2 flex items-center justify-between cursor-pointer">
+                        Can I switch tiers later?
+                        <span class="material-symbols-outlined">expand_more</span>
+</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 hidden">Yes, you can scale your compute resources up or down at any time. Changes are prorated automatically.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-near-black dark:bg-surface-near-black font-body-sm text-body-sm bg-surface-near-black dark:bg-surface-near-black border-t border-white/5 flat no shadows w-full py-12 px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<div>
+<div class="font-title-md text-title-md font-bold text-on-surface mb-2">Layboka AI</div>
+<div class="text-on-surface-variant">© 2024 Layboka AI. Precision engineered for commerce.</div>
+<div class="mt-6 flex items-center gap-2 text-on-surface-variant bg-surface-container w-fit px-3 py-1.5 rounded border border-white/10">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span class="font-body-sm text-body-sm text-xs">Secure payments powered by Stripe</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-6 md:justify-end">
+<a class="text-on-surface-variant hover:text-brand-orange transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-brand-orange transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-brand-orange transition-colors" href="#">Security</a>
+<a class="text-on-surface-variant hover:text-brand-orange transition-colors" href="#">Status</a>
+<a class="text-on-surface-variant hover:text-brand-orange transition-colors" href="#">Contact Sales</a>
+</div>
+</footer>
+<script>
+        // Simple FAQ toggle
+        document.querySelectorAll('.bg-surface-container h4').forEach(header => {
+            header.addEventListener('click', () => {
+                const p = header.nextElementSibling;
+                const icon = header.querySelector('.material-symbols-outlined');
+                if(p.classList.contains('hidden')) {
+                    p.classList.remove('hidden');
+                    icon.textContent = 'expand_less';
+                } else {
+                    p.classList.add('hidden');
+                    icon.textContent = 'expand_more';
+                }
+            });
+        });
+    </script>
+</body></html>
