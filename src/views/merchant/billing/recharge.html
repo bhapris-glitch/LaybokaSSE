@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Recharge - Layboka AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#ffb599",
+                        "background": "#121415",
+                        "secondary-container": "#00a572",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-primary-fixed-variant": "#7f2b00",
+                        "inverse-surface": "#e2e2e3",
+                        "tertiary": "#00dce5",
+                        "error": "#ffb4ab",
+                        "error-container": "#93000a",
+                        "inverse-primary": "#a63b00",
+                        "on-secondary": "#003824",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-background": "#e2e2e3",
+                        "ai-glow": "#00F5FF",
+                        "surface": "#121415",
+                        "surface-container": "#141718",
+                        "surface-container-highest": "#333536",
+                        "secondary": "#4edea3",
+                        "secondary-fixed-dim": "#4edea3",
+                        "tertiary-fixed-dim": "#00dce5",
+                        "on-primary-container": "#531a00",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#1F2223",
+                        "on-secondary-fixed": "#002113",
+                        "surface-container-low": "#1a1c1d",
+                        "surface-container-high": "#282a2b",
+                        "on-primary": "#5a1c00",
+                        "outline-variant": "#5b4137",
+                        "on-surface-variant": "#e4bfb1",
+                        "primary-fixed": "#ffdbce",
+                        "on-tertiary-fixed": "#002021",
+                        "on-surface": "#e2e2e3",
+                        "on-primary-fixed": "#370e00",
+                        "outline": "#ab8a7d",
+                        "success-green": "#10B981",
+                        "primary-container": "#ff5f00",
+                        "surface-container-lowest": "#0c0e0f",
+                        "surface-near-black": "#0A0C0D",
+                        "surface-variant": "#333536",
+                        "brand-orange": "#FF5F00",
+                        "on-secondary-container": "#00311f",
+                        "on-tertiary": "#003739",
+                        "inverse-on-surface": "#2f3132",
+                        "tertiary-fixed": "#63f7ff",
+                        "on-error": "#690005",
+                        "surface-dim": "#121415",
+                        "on-tertiary-container": "#003235",
+                        "primary": "#ffb599",
+                        "surface-tint": "#ffb599",
+                        "tertiary-container": "#00a4ab",
+                        "on-tertiary-fixed-variant": "#004f53"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Hanken Grotesk"],
+                        "data-mono": ["JetBrains Mono"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-caps": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-sm": ["Inter"],
+                        "title-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "data-mono": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .ambient-glow {
+            box-shadow: 0 0 12px 0 rgba(255, 95, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-surface-near-black text-on-surface font-body-lg antialiased flex selection:bg-brand-orange selection:text-surface-near-black">
+<!-- SideNavBar (Shared Component) -->
+<nav class="bg-surface-container dark:bg-surface-container fixed left-0 top-0 h-screen w-64 hidden lg:flex flex-col border-r border-outline-variant/10 z-40">
+<!-- Header -->
+<div class="px-6 py-8 flex flex-col gap-1">
+<span class="font-headline-lg text-headline-lg text-brand-orange tracking-tight">Layboka AI</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Merchant Portal</span>
+</div>
+<!-- Navigation Links -->
+<div class="flex flex-col gap-2 py-6 flex-1 px-4">
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-3 flex items-center gap-3 hover:bg-surface-container-high transition-all duration-300 ease-in-out rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-title-md text-title-md text-sm">Dashboard</span>
+</a>
+<a class="bg-primary-container/10 text-brand-orange border-r-4 border-brand-orange px-4 py-3 flex items-center gap-3 transition-all duration-300 ease-in-out rounded-l-lg ambient-glow" href="#">
+<span class="material-symbols-outlined" data-icon="subscriptions" style="font-variation-settings: 'FILL' 1;">subscriptions</span>
+<span class="font-title-md text-title-md text-sm font-semibold">Subscription</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-3 flex items-center gap-3 hover:bg-surface-container-high transition-all duration-300 ease-in-out rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-title-md text-title-md text-sm">Analytics</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-3 flex items-center gap-3 hover:bg-surface-container-high transition-all duration-300 ease-in-out rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-title-md text-title-md text-sm">Billing</span>
+</a>
+<a class="text-on-surface-variant hover:text-on-surface px-4 py-3 flex items-center gap-3 hover:bg-surface-container-high transition-all duration-300 ease-in-out rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+<span class="font-title-md text-title-md text-sm">Support</span>
+</a>
+</div>
+<!-- CTA & Footer -->
+<div class="p-6 border-t border-outline-variant/10 flex flex-col gap-4 mt-auto">
+<button class="w-full bg-brand-orange text-surface-near-black font-title-md text-sm font-bold py-3 rounded-lg hover:bg-primary-fixed transition-colors">
+                Upgrade Now
+            </button>
+<a class="text-on-surface-variant hover:text-error-container px-4 py-2 flex items-center gap-3 transition-colors duration-300 ease-in-out rounded-lg group" href="#">
+<span class="material-symbols-outlined group-hover:text-error" data-icon="logout">logout</span>
+<span class="font-title-md text-title-md text-sm group-hover:text-error">Logout</span>
+</a>
+</div>
+</nav>
+<!-- Main Wrapper -->
+<div class="flex-1 flex flex-col min-h-screen lg:ml-64 w-full">
+<!-- TopAppBar (Shared Component) -->
+<header class="bg-surface dark:bg-surface w-full top-0 sticky border-b border-outline-variant/20 flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop z-50">
+<div class="flex items-center gap-4 lg:hidden">
+<span class="material-symbols-outlined text-brand-orange cursor-pointer">menu</span>
+<span class="text-title-md font-headline-lg text-brand-orange">Layboka AI</span>
+</div>
+<!-- Spacer for Desktop to push actions right -->
+<div class="hidden lg:block flex-1"></div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-brand-orange transition-colors duration-200 cursor-pointer active:opacity-80" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-brand-orange transition-colors duration-200 cursor-pointer active:opacity-80 relative" data-icon="notifications">
+                        notifications
+                        <span class="absolute top-0 right-0 w-2 h-2 bg-brand-orange rounded-full"></span>
+</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-brand-orange transition-colors duration-200 cursor-pointer active:opacity-80" data-icon="settings">settings</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border border-outline-variant/30 overflow-hidden cursor-pointer">
+<img alt="Merchant Profile Avatar" class="w-full h-full object-cover" data-alt="A macro shot of a sleek, abstract geometric sphere glowing with a subtle orange inner light against a pitch-black background, representing a high-tech AI avatar profile picture. The lighting is dramatic and moody, emphasizing precision and futuristic aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKnUdshjq_Va_3u2ItvHA6JG_iijQSLNH_pT51sp_3i_8J3cstN5-6F6dTMUKUwi07wpIWLD2Q5jpjeFxbPH97e_Xl8J8y3dG0BcHmqK0C0fBA22nWb-wvQPGBSPmAh6V4Fbp3LYcdGyDpN8bV4AkJck0PqBMI57qmVTVZeQuSknN2CheA_z1alyGbi4tuPavBV71EdxTyv5iBop38TR7PV_Poa-COdH4-ADTBG8_tR2bk-vljpYv5"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 p-margin-mobile md:p-gutter max-w-container-max mx-auto w-full">
+<!-- Context Banner -->
+<div class="bg-primary-container/10 border border-brand-orange/30 rounded-lg p-4 mb-8 flex items-start gap-4">
+<span class="material-symbols-outlined text-brand-orange mt-0.5" data-icon="info">info</span>
+<div>
+<h3 class="font-title-md text-title-md text-brand-orange text-base font-semibold">Trial Ended</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Your 5-day trial has concluded. Pick a plan below to resume AI sales services immediately and avoid losing recovered revenue.</p>
+</div>
+</div>
+<!-- Page Header -->
+<div class="mb-10">
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface mb-2">Recharge Your AI Sales Executive</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Continue recovering abandoned carts and engaging customers with our precision-engineered, autonomous conversation plans.</p>
+</div>
+<!-- Layout Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column (Plans & Payment) -->
+<div class="lg:col-span-8 flex flex-col gap-8">
+<!-- Plan Selector (Bento Style) -->
+<section class="bg-surface-container border border-white/5 rounded-xl p-6">
+<div class="flex items-center justify-between border-b border-outline-variant/20 pb-4 mb-6">
+<h2 class="font-headline-lg text-title-md font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-brand-orange" data-icon="layers">layers</span>
+                                Select Capacity
+                            </h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 relative">
+<!-- Starter Plan -->
+<div class="bg-surface-bright rounded-lg p-5 border border-white/5 hover:border-outline-variant/50 transition-colors cursor-pointer flex flex-col h-full group">
+<div class="mb-4">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider mb-1">Starter</h3>
+<div class="flex items-baseline gap-1">
+<span class="font-display-lg text-headline-lg">$25</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/mo</span>
+</div>
+</div>
+<ul class="flex flex-col gap-3 font-body-sm text-body-sm text-on-surface-variant mb-6 flex-1">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-success-green text-[18px]">check</span> Up to 500 active chats</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-success-green text-[18px]">check</span> Standard response time</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-outline text-[18px]">close</span> No custom data training</li>
+</ul>
+<div class="w-full h-10 rounded border border-outline-variant/30 flex items-center justify-center font-title-md text-sm text-on-surface group-hover:bg-surface-container-high transition-colors">
+                                    Select
+                                </div>
+</div>
+<!-- Growth Plan (Highlighted) -->
+<div class="bg-surface-bright rounded-lg p-5 cursor-pointer flex flex-col h-full relative transform border-white/5 hover:border-outline-variant/50 group">
+<div class="mb-4 mt-2">
+<h3 class="font-label-caps text-label-caps text-brand-orange uppercase tracking-wider mb-1">Growth</h3>
+<div class="flex items-baseline gap-1">
+<span class="font-display-lg text-headline-lg text-on-surface">$59</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/mo</span>
+</div>
+</div>
+<ul class="flex flex-col gap-3 font-body-sm text-body-sm text-on-surface mb-6 flex-1">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-success-green text-[18px]">check</span> Up to 2,500 active chats</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-success-green text-[18px]">check</span> Priority AI processing</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-success-green text-[18px]">check</span> Basic custom data training</li>
+</ul>
+<div class="w-full h-10 rounded border border-outline-variant/30 flex items-center justify-center font-title-md text-sm text-on-surface group-hover:bg-surface-container-high transition-colors">Select</div>
+</div>
+<!-- Premium Plan -->
+<div class="bg-surface-bright rounded-lg p-5 border transition-colors cursor-pointer flex flex-col h-full border-2 border-brand-orange ambient-glow scale-[1.02] z-10"><div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-orange text-surface-near-black font-label-caps text-[10px] uppercase font-bold px-3 py-1 rounded-full whitespace-nowrap">Active Trial</div>
+<div class="mb-4">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider mb-1">Premium</h3>
+<div class="flex items-baseline gap-1">
+<span class="font-display-lg text-headline-lg">$149</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/mo</span>
+</div>
+</div>
+<ul class="flex flex-col gap-3 font-body-sm text-body-sm text-on-surface-variant mb-6 flex-1">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-success-green text-[18px]">check</span> Unlimited chats</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-success-green text-[18px]">check</span> Instant response priority</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-success-green text-[18px]">check</span> Full dedicated AI model</li>
+</ul>
+<div class="w-full h-10 rounded bg-brand-orange/20 text-brand-orange font-title-md text-sm font-semibold flex items-center justify-center border border-brand-orange/50">Selected</div>
+</div>
+</div>
+</section>
+<!-- Payment Method Section -->
+<section class="bg-surface-container border border-white/5 rounded-xl p-6">
+<div class="flex items-center justify-between border-b border-outline-variant/20 pb-4 mb-6">
+<h2 class="font-headline-lg text-title-md font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-brand-orange" data-icon="credit_card">credit_card</span>
+                                Payment Method
+                            </h2>
+</div>
+<div class="space-y-4">
+<!-- Existing Card (Mock) -->
+<label class="flex items-center justify-between p-4 bg-surface-bright border border-brand-orange/50 rounded-lg cursor-pointer">
+<div class="flex items-center gap-4">
+<input checked="" class="form-radio text-brand-orange bg-surface-near-black border-outline focus:ring-brand-orange focus:ring-offset-surface-bright focus:ring-offset-2" name="payment" type="radio"/>
+<div class="flex flex-col">
+<span class="font-title-md text-sm font-medium">Visa ending in 4242</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Expires 12/25</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[32px]" data-icon="credit_card">credit_card</span>
+</label>
+<!-- Add New Card Option -->
+<label class="flex items-center p-4 bg-surface-container-high border border-white/5 rounded-lg cursor-pointer hover:border-outline-variant/50 transition-colors">
+<div class="flex items-center gap-4">
+<input class="form-radio text-brand-orange bg-surface-near-black border-outline focus:ring-brand-orange focus:ring-offset-surface-bright focus:ring-offset-2" name="payment" type="radio"/>
+<span class="font-title-md text-sm font-medium text-on-surface-variant">Add new credit or debit card</span>
+</div>
+</label>
+</div>
+</section>
+</div>
+<!-- Right Column (Order Summary) -->
+<div class="lg:col-span-4">
+<div class="bg-surface-container border border-white/5 rounded-xl p-6 sticky top-24">
+<h2 class="font-headline-lg text-title-md font-semibold border-b border-outline-variant/20 pb-4 mb-6">Order Summary</h2>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between items-center">
+<span class="font-body-lg text-body-lg text-on-surface-variant">Selected Plan</span>
+<span class="font-title-md text-title-md text-sm font-medium">Premium Tier</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-lg text-body-lg text-on-surface-variant">Billing Cycle</span>
+<span class="font-title-md text-title-md text-sm font-medium">Monthly</span>
+</div>
+<div class="h-px w-full bg-outline-variant/20 my-2"></div>
+<div class="flex justify-between items-end">
+<span class="font-title-md text-title-md">Subtotal</span>
+<div class="text-right">
+<span class="font-data-mono text-headline-lg font-bold block leading-none">$149.00</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest mt-1 block">USD</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-brand-orange hover:bg-primary-fixed text-surface-near-black font-title-md font-bold py-4 rounded-lg transition-all duration-200 flex items-center justify-center gap-2 mb-4 ambient-glow">
+<span class="material-symbols-outlined text-[20px]" data-icon="lock">lock</span>
+                            Secure Recharge
+                        </button>
+<div class="flex flex-col items-center justify-center gap-2 mt-6">
+<div class="flex items-center gap-2 text-on-surface-variant/70">
+<span class="material-symbols-outlined text-[16px]" data-icon="shield">shield</span>
+<span class="font-body-sm text-xs">Secure payments powered by Stripe</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
