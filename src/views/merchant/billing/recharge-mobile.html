@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Recharge - Layboka AI</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#ffb599",
+                        "background": "#121415",
+                        "secondary-container": "#00a572",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-primary-fixed-variant": "#7f2b00",
+                        "inverse-surface": "#e2e2e3",
+                        "tertiary": "#00dce5",
+                        "error": "#ffb4ab",
+                        "error-container": "#93000a",
+                        "inverse-primary": "#a63b00",
+                        "on-secondary": "#003824",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-background": "#e2e2e3",
+                        "ai-glow": "#00F5FF",
+                        "surface": "#121415",
+                        "surface-container": "#141718",
+                        "surface-container-highest": "#333536",
+                        "secondary": "#4edea3",
+                        "secondary-fixed-dim": "#4edea3",
+                        "tertiary-fixed-dim": "#00dce5",
+                        "on-primary-container": "#531a00",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#1F2223",
+                        "on-secondary-fixed": "#002113",
+                        "surface-container-low": "#1a1c1d",
+                        "surface-container-high": "#282a2b",
+                        "on-primary": "#5a1c00",
+                        "outline-variant": "#5b4137",
+                        "on-surface-variant": "#e4bfb1",
+                        "primary-fixed": "#ffdbce",
+                        "on-tertiary-fixed": "#002021",
+                        "on-surface": "#e2e2e3",
+                        "on-primary-fixed": "#370e00",
+                        "outline": "#ab8a7d",
+                        "success-green": "#10B981",
+                        "primary-container": "#ff5f00",
+                        "surface-container-lowest": "#0c0e0f",
+                        "surface-near-black": "#0A0C0D",
+                        "surface-variant": "#333536",
+                        "brand-orange": "#FF5F00",
+                        "on-secondary-container": "#00311f",
+                        "on-tertiary": "#003739",
+                        "inverse-on-surface": "#2f3132",
+                        "tertiary-fixed": "#63f7ff",
+                        "on-error": "#690005",
+                        "surface-dim": "#121415",
+                        "on-tertiary-container": "#003235",
+                        "primary": "#ffb599",
+                        "surface-tint": "#ffb599",
+                        "tertiary-container": "#00a4ab",
+                        "on-tertiary-fixed-variant": "#004f53"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Hanken Grotesk"],
+                        "data-mono": ["JetBrains Mono"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-caps": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-sm": ["Inter"],
+                        "title-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "data-mono": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Ambient glow for interactive elements */
+        .ai-glow-active {
+            box-shadow: 0 0 12px rgba(255, 95, 0, 0.2);
+        }
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #121415;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333536;
+            border-radius: 4px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col font-body-sm overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface w-full top-0 sticky border-b border-outline-variant/20 flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop z-50">
+<div class="text-title-md font-headline-lg text-brand-orange cursor-pointer active:opacity-80 flex items-center gap-2">
+<span class="material-symbols-outlined text-brand-orange">memory</span>
+            Layboka AI
+        </div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant font-medium hover:text-brand-orange transition-colors duration-200 cursor-pointer active:opacity-80">account_balance_wallet</span>
+<span class="material-symbols-outlined text-on-surface-variant font-medium hover:text-brand-orange transition-colors duration-200 cursor-pointer active:opacity-80">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant font-medium hover:text-brand-orange transition-colors duration-200 cursor-pointer active:opacity-80">settings</span>
+<img alt="Merchant Profile Avatar" class="w-8 h-8 rounded-full border border-outline-variant/20 object-cover hidden md:block" data-alt="A highly detailed close-up of a sleek, dark-mode merchant profile avatar featuring a minimal geometric orange neon accent on a near-black matte background, professional and high-tech." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABcxgxu4TobBd_BzaYTHHKsH-fARJ4xXwenr7eBjXYInnQPp_3Y7n6rjs5nIihPGo-zQeTWx0Dxm6XdEgP7KYS9_sm7aec9VLvbPPkO5pllV2VOkGs12PjtuPwYALfmNoq9MEPH5zBfQzWhs5t7eM2o8RIdngNs4voZKFcj0Fn2IVYAAt8yZ_izWCD9MwIvh6KtXsaB9Z59_vr4H9cPLWHYcsFI9uqhB1XejSnQm7i-R2Rq8R0noJS"/>
+</div>
+</header>
+<!-- Main Content Area -->
+<!-- Padding bottom accommodates the sticky footer (approx 100px) + bottom nav (64px) -->
+<main class="flex-1 w-full max-w-container-max mx-auto px-margin-mobile pb-[180px] pt-4 flex flex-col gap-6 relative">
+<!-- Urgent Alert Banner -->
+<div class="w-full bg-error-container/20 border border-error/50 rounded-lg p-3 flex items-start gap-3">
+<span class="material-symbols-outlined text-error mt-0.5" style="font-variation-settings: 'FILL' 1;">warning</span>
+<div>
+<p class="font-body-sm text-error font-medium">Trial Expired - Action Required</p>
+<p class="font-body-sm text-on-surface-variant text-xs mt-1">Recharge your account to maintain uninterrupted access to Layboka AI processing.</p>
+</div>
+</div>
+<!-- Section Header -->
+<div class="flex flex-col gap-1 mt-2">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Select Plan</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Choose the computational tier for your operations.</p>
+</div>
+<!-- Plan Cards (Vertical layout for mobile) -->
+<div class="flex flex-col gap-4" id="plan-container">
+<!-- Starter Plan -->
+<div class="plan-card bg-surface-container border border-outline-variant/20 rounded-xl p-5 flex flex-col gap-4 cursor-pointer transition-all duration-200 active:scale-[0.98]" data-price="25">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Starter</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-data-mono text-data-mono text-brand-orange">$</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-brand-orange">25</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/mo</span>
+</div>
+</div>
+<div class="radio-indicator w-5 h-5 rounded-full border-2 border-outline-variant flex items-center justify-center transition-colors">
+<div class="inner-dot w-2.5 h-2.5 rounded-full bg-transparent transition-colors"></div>
+</div>
+</div>
+<div class="h-px w-full bg-outline-variant/10"></div>
+<ul class="flex flex-col gap-2">
+<li class="flex items-center gap-2 font-body-sm text-body-sm text-inverse-surface">
+<span class="material-symbols-outlined text-success-green text-[16px]">check_circle</span>
+                        10k AI Predictions
+                    </li>
+<li class="flex items-center gap-2 font-body-sm text-body-sm text-inverse-surface">
+<span class="material-symbols-outlined text-success-green text-[16px]">check_circle</span>
+                        Standard Support
+                    </li>
+<li class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-outline-variant text-[16px]">cancel</span>
+                        Advanced Analytics
+                    </li>
+</ul>
+</div>
+<!-- Growth Plan (Pre-selected default) -->
+<div class="plan-card bg-surface-container border rounded-xl p-5 flex flex-col gap-4 cursor-pointer transition-all duration-200 active:scale-[0.98] relative overflow-hidden border-outline-variant/20" data-price="59" data-selected="false">
+<!-- Subtle background glow for selected state -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-brand-orange/5 rounded-full blur-2xl -mr-10 -mt-10 pointer-events-none"></div>
+<div class="flex justify-between items-start relative z-10">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps text-brand-orange uppercase tracking-wider font-bold">Growth</span>
+<span class="bg-brand-orange/10 text-brand-orange text-[10px] px-1.5 py-0.5 rounded font-data-mono">POPULAR</span>
+</div>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="font-data-mono text-data-mono text-brand-orange">$</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-brand-orange">59</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/mo</span>
+</div>
+</div>
+<div class="radio-indicator w-5 h-5 rounded-full border-2 flex items-center justify-center transition-colors border-outline-variant">
+<div class="inner-dot w-2.5 h-2.5 rounded-full transition-colors bg-transparent"></div>
+</div>
+</div>
+<div class="h-px w-full bg-brand-orange/10 relative z-10"></div>
+<ul class="flex flex-col gap-2 relative z-10">
+<li class="flex items-center gap-2 font-body-sm text-body-sm text-inverse-surface">
+<span class="material-symbols-outlined text-success-green text-[16px]">check_circle</span>
+                        50k AI Predictions
+                    </li>
+<li class="flex items-center gap-2 font-body-sm text-body-sm text-inverse-surface">
+<span class="material-symbols-outlined text-success-green text-[16px]">check_circle</span>
+                        Priority Support
+                    </li>
+<li class="flex items-center gap-2 font-body-sm text-body-sm text-inverse-surface">
+<span class="material-symbols-outlined text-success-green text-[16px]">check_circle</span>
+                        Advanced Analytics
+                    </li>
+</ul>
+</div>
+<!-- Premium Plan -->
+<div class="plan-card bg-surface-container border rounded-xl p-5 flex flex-col gap-4 cursor-pointer transition-all duration-200 active:scale-[0.98] border-brand-orange ai-glow-active relative overflow-hidden" data-price="149" data-selected="true"><div class="absolute top-0 right-0 w-32 h-32 bg-brand-orange/5 rounded-full blur-2xl -mr-10 -mt-10 pointer-events-none"></div><div class="flex justify-between items-start relative z-10"><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-label-caps text-label-caps text-brand-orange uppercase tracking-wider font-bold">Premium</span><span class="bg-brand-orange/10 text-brand-orange text-[10px] px-1.5 py-0.5 rounded font-data-mono">ACTIVE TRIAL</span></div><div class="flex items-baseline gap-1 mt-1"><span class="font-data-mono text-data-mono text-brand-orange">$</span><span class="font-headline-lg-mobile text-headline-lg-mobile text-brand-orange">149</span><span class="font-body-sm text-body-sm text-on-surface-variant">/mo</span></div><p class="text-[10px] text-brand-orange font-medium mt-1">You are using Premium plan in trial</p></div><div class="radio-indicator w-5 h-5 rounded-full border-2 border-brand-orange flex items-center justify-center transition-colors"><div class="inner-dot w-2.5 h-2.5 rounded-full bg-brand-orange transition-colors"></div></div></div><div class="h-px w-full bg-brand-orange/10 relative z-10"></div><ul class="flex flex-col gap-2 relative z-10"><li class="flex items-center gap-2 font-body-sm text-body-sm text-inverse-surface"><span class="material-symbols-outlined text-success-green text-[16px]">check_circle</span>Unlimited Predictions</li><li class="flex items-center gap-2 font-body-sm text-body-sm text-inverse-surface"><span class="material-symbols-outlined text-success-green text-[16px]">check_circle</span>24/7 Dedicated Support</li><li class="flex items-center gap-2 font-body-sm text-body-sm text-inverse-surface"><span class="material-symbols-outlined text-success-green text-[16px]">check_circle</span>Custom Model Training</li></ul></div>
+</div>
+<!-- Secure Checkout Trust Badges -->
+<div class="flex items-center justify-center gap-2 mt-4 text-on-surface-variant opacity-70">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span class="font-body-sm text-xs">Secure Checkout via</span>
+<span class="font-headline-lg-mobile text-sm font-bold tracking-tight">stripe</span>
+</div>
+</main>
+<!-- Sticky Footer for Action -->
+<!-- Positioned exactly above the bottom nav (64px) on mobile -->
+<div class="fixed bottom-[64px] lg:bottom-0 w-full bg-surface-bright/95 backdrop-blur-md border-t border-outline-variant/20 px-margin-mobile py-4 z-40 flex items-center justify-between shadow-[0_-8px_24px_rgba(0,0,0,0.6)]">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Total Due</span>
+<div class="flex items-baseline gap-1">
+<span class="font-data-mono text-data-mono text-on-surface">$</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface" id="total-price">149</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">.00</span>
+</div>
+</div>
+<button class="bg-primary-container text-surface-near-black font-body-lg text-body-lg font-semibold px-8 py-3 rounded-lg flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all shadow-[0_0_12px_rgba(255,95,0,0.3)]">
+            Recharge Now
+            <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+<!-- BottomNavBar -->
+<nav class="bg-surface-container-high dark:bg-surface-container-high fixed bottom-0 w-full z-50 lg:hidden shadow-[0_-4px_12px_rgba(0,0,0,0.5)] flex justify-around items-center h-16 border-t border-outline-variant/20">
+<!-- Home (Inactive) -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant scale-95 transition-transform duration-150 active:bg-surface-container-highest w-full h-full cursor-pointer">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-caps text-label-caps mt-1">Home</span>
+</div>
+<!-- Plans (Active) -->
+<div class="flex flex-col items-center justify-center text-brand-orange scale-95 transition-transform duration-150 active:bg-surface-container-highest w-full h-full cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-caps text-label-caps mt-1 font-bold">Plans</span>
+</div>
+<!-- Orders (Inactive) -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant scale-95 transition-transform duration-150 active:bg-surface-container-highest w-full h-full cursor-pointer">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-label-caps text-label-caps mt-1">Orders</span>
+</div>
+<!-- Profile (Inactive) -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant scale-95 transition-transform duration-150 active:bg-surface-container-highest w-full h-full cursor-pointer">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-caps text-label-caps mt-1">Profile</span>
+</div>
+</nav>
+<!-- Micro-interaction Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.plan-card');
+            const totalPriceEl = document.getElementById('total-price');
+
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    // Reset all cards
+                    cards.forEach(c => {
+                        c.setAttribute('data-selected', 'false');
+                        c.classList.remove('border-brand-orange', 'ai-glow-active');
+                        c.classList.add('border-outline-variant/20');
+                        
+                        // Reset radio
+                        const indicator = c.querySelector('.radio-indicator');
+                        const dot = c.querySelector('.inner-dot');
+                        indicator.classList.remove('border-brand-orange');
+                        indicator.classList.add('border-outline-variant');
+                        dot.classList.remove('bg-brand-orange');
+                        dot.classList.add('bg-transparent');
+                        
+                        // Remove glow bg if exists
+                        const glow = c.querySelector('.bg-brand-orange\\/5');
+                        if (glow) glow.remove();
+                    });
+
+                    // Set active state on clicked card
+                    card.setAttribute('data-selected', 'true');
+                    card.classList.remove('border-outline-variant/20');
+                    card.classList.add('border-brand-orange', 'ai-glow-active');
+                    
+                    // Update radio
+                    const indicator = card.querySelector('.radio-indicator');
+                    const dot = card.querySelector('.inner-dot');
+                    indicator.classList.remove('border-outline-variant');
+                    indicator.classList.add('border-brand-orange');
+                    dot.classList.remove('bg-transparent');
+                    dot.classList.add('bg-brand-orange');
+
+                    // Add glow bg to selected
+                    const glowDiv = document.createElement('div');
+                    glowDiv.className = 'absolute top-0 right-0 w-32 h-32 bg-brand-orange/5 rounded-full blur-2xl -mr-10 -mt-10 pointer-events-none transition-opacity duration-300';
+                    card.insertBefore(glowDiv, card.firstChild);
+
+                    // Update Price
+                    const price = card.getAttribute('data-price');
+                    totalPriceEl.textContent = price;
+                    
+                    // Simple pop animation for the price change
+                    totalPriceEl.style.transform = 'scale(1.2)';
+                    totalPriceEl.style.color = '#FF5F00'; // brand-orange
+                    setTimeout(() => {
+                        totalPriceEl.style.transform = 'scale(1)';
+                        totalPriceEl.style.color = '#e2e2e3'; // on-surface
+                        totalPriceEl.style.transition = 'all 0.3s ease';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body></html>
