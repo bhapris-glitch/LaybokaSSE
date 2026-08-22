@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Layboka AI - Trial Expiry Notification</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#ab8a7d",
+                        "outline-variant": "#5b4137",
+                        "surface-container-highest": "#333536",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#4edea3",
+                        "tertiary-fixed-dim": "#00dce5",
+                        "surface-container-high": "#282a2b",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-tertiary": "#003739",
+                        "secondary-container": "#00a572",
+                        "secondary": "#4edea3",
+                        "primary-fixed": "#ffdbce",
+                        "on-primary-fixed": "#370e00",
+                        "on-primary-container": "#531a00",
+                        "on-surface": "#e2e2e3",
+                        "inverse-surface": "#e2e2e3",
+                        "on-secondary-fixed": "#002113",
+                        "primary-container": "#ff5f00",
+                        "tertiary": "#00dce5",
+                        "surface-container": "#141718",
+                        "success-green": "#10B981",
+                        "surface-tint": "#ffb599",
+                        "primary-fixed-dim": "#ffb599",
+                        "on-tertiary-fixed": "#002021",
+                        "surface-container-low": "#1a1c1d",
+                        "on-tertiary-container": "#003235",
+                        "on-tertiary-fixed-variant": "#004f53",
+                        "secondary-fixed": "#6ffbbe",
+                        "inverse-primary": "#a63b00",
+                        "on-secondary": "#003824",
+                        "ai-glow": "#00F5FF",
+                        "surface-near-black": "#0A0C0D",
+                        "surface-bright": "#38393a",
+                        "on-secondary-container": "#00311f",
+                        "tertiary-container": "#00a4ab",
+                        "on-error": "#690005",
+                        "on-primary-fixed-variant": "#7f2b00",
+                        "on-surface-variant": "#e4bfb1",
+                        "surface-variant": "#333536",
+                        "surface": "#121415",
+                        "tertiary-fixed": "#63f7ff",
+                        "on-primary": "#5a1c00",
+                        "error-container": "#93000a",
+                        "error": "#ffb4ab",
+                        "primary": "#ffb599",
+                        "inverse-on-surface": "#2f3132",
+                        "on-background": "#e2e2e3",
+                        "surface-dim": "#121415",
+                        "brand-orange": "#FF5F00",
+                        "surface-container-lowest": "#0c0e0f",
+                        "background": "#121415"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "label-caps": ["JetBrains Mono"],
+                        "data-mono": ["JetBrains Mono"],
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "title-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "data-mono": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(20, 23, 24, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-effect {
+            box-shadow: 0 0 12px 0 rgba(255, 95, 0, 0.2);
+        }
+        .pulse-border {
+            animation: pulse-border 2s infinite;
+        }
+        @keyframes pulse-border {
+            0% { border-color: rgba(255, 95, 0, 0.4); }
+            50% { border-color: rgba(255, 95, 0, 0.8); }
+            100% { border-color: rgba(255, 95, 0, 0.4); }
+        }
+    </style>
+</head>
+<body class="bg-surface-near-black text-on-surface font-body-lg min-h-screen flex flex-col antialiased">
+<!-- Email Container -->
+<main class="flex-grow flex items-center justify-center p-margin-mobile md:p-gutter">
+<div class="w-full max-w-2xl bg-surface-container rounded-xl overflow-hidden shadow-2xl relative border border-white/5">
+<!-- Abstract Background Pattern / Gradient -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at top right, #FF5F00 0%, transparent 40%);"></div>
+<!-- Header -->
+<div class="p-gutter border-b border-white/10 flex items-center justify-between bg-surface/50 backdrop-blur-sm">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-brand-orange text-3xl">token</span>
+<span class="font-title-md text-title-md font-bold text-on-surface">Layboka AI</span>
+</div>
+<div class="bg-surface-bright px-3 py-1 rounded-full border border-brand-orange/30">
+<span class="font-label-caps text-label-caps text-brand-orange">48 HOURS REMAINING</span>
+</div>
+</div>
+<!-- Content Body -->
+<div class="p-gutter md:px-12 py-12">
+<div class="text-center mb-10">
+<h1 class="font-headline-lg text-headline-lg md:font-display-lg md:text-display-lg font-bold mb-4">
+                        Your trial is almost over.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mx-auto">
+                        Don't lose your competitive edge. Maintain continuous access to premium sales intelligence and automated insights.
+                    </p>
+</div>
+<!-- Value Proposition / ROI Panel -->
+<div class="glass-panel rounded-lg p-6 mb-10">
+<div class="flex items-center space-x-2 mb-6 border-b border-white/10 pb-4">
+<span class="material-symbols-outlined text-success-green">monitoring</span>
+<h2 class="font-title-md text-title-md font-semibold text-on-surface">Trial Performance Impact</h2>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Stat 1 -->
+<div class="bg-surface-dim rounded border border-white/5 p-4 flex flex-col justify-center text-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-2">REVENUE RECOVERED</span>
+<div class="flex items-center justify-center space-x-1">
+<span class="font-data-mono text-data-mono text-success-green text-2xl font-bold">$12,450</span>
+<span class="material-symbols-outlined text-success-green text-sm" style="font-variation-settings: 'FILL' 1;">arrow_upward</span>
+</div>
+</div>
+<!-- Stat 2 -->
+<div class="bg-surface-dim rounded border border-white/5 p-4 flex flex-col justify-center text-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-2">ACTIVE AI CHATS</span>
+<div class="flex items-center justify-center space-x-2">
+<span class="font-data-mono text-data-mono text-on-surface text-2xl font-bold">1,042</span>
+<div class="w-2 h-2 rounded-full bg-success-green animate-pulse"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Call to Action -->
+<div class="text-center">
+<button class="bg-brand-orange hover:bg-opacity-90 text-surface-near-black font-title-md text-title-md font-bold py-4 px-12 rounded-lg transition-all duration-200 glow-effect hover:-translate-y-1 w-full md:w-auto">
+                        Renew Now
+                    </button>
+<p class="mt-4 font-body-sm text-body-sm text-on-surface-variant">
+                        Takes less than 60 seconds. Cancel anytime.
+                    </p>
+</div>
+</div>
+<!-- Footer from Shared Components -->
+<footer class="w-full py-8 px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-4 items-center bg-surface-near-black border-t border-white/5">
+<div class="flex items-center justify-center md:justify-start space-x-2">
+<span class="font-title-md text-title-md font-bold text-on-surface">Layboka AI</span>
+</div>
+<div class="flex flex-col md:flex-row items-center justify-center md:justify-end space-y-2 md:space-y-0 md:space-x-6">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-brand-orange transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-brand-orange transition-colors" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-brand-orange transition-colors" href="#">Security</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-brand-orange transition-colors" href="#">Status</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-brand-orange transition-colors" href="#">Contact Sales</a>
+</div>
+<div class="col-span-1 md:col-span-2 text-center mt-4">
+<p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 Layboka AI. Precision engineered for commerce.</p>
+</div>
+</footer>
+</div>
+</main>
+</body></html>
