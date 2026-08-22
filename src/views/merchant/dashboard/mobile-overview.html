@@ -130,10 +130,18 @@
       min-height: max(884px, 100dvh);
     }
   </style>
-  </head>
+</head>
 <body class="bg-surface-near-black text-on-background min-h-screen flex flex-col font-body-sm pb-20">
 <!-- Mobile Header -->
-<header class="w-full top-0 sticky z-50 glass-panel px-margin-mobile py-base flex justify-between items-center shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+<div class="sticky top-0 z-[60] bg-brand-orange text-surface-near-black px-margin-mobile py-2 flex justify-between items-center shadow-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">timer</span>
+<span class="font-label-caps text-[11px] font-bold uppercase tracking-wider">5-Day Trial: 4 Days Remaining</span>
+</div>
+<a class="bg-surface-near-black text-brand-orange font-label-caps text-[10px] px-3 py-1 rounded-full font-bold hover:bg-opacity-80 transition-all" href="{{DATA:SCREEN:SCREEN_9}}">
+        RECHARGE
+    </a>
+</div><header class="w-full top-0 sticky z-50 glass-panel px-margin-mobile py-base flex justify-between items-center shadow-[0_4px_30px_rgba(0,0,0,0.5)]" style="top: 40px;">
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-brand-orange text-2xl" style="font-variation-settings: 'FILL' 1;">hexagon</span>
 <h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Layboka Dashboard</h1>
