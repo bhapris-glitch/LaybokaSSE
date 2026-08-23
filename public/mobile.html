@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Layboka AI - Next-Gen AI Sales Executive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error": "#ffb4ab",
+                      "surface-variant": "#333536",
+                      "on-primary-container": "#531a00",
+                      "surface-container": "#1e2021",
+                      "secondary-fixed-dim": "#4edea3",
+                      "on-secondary": "#003824",
+                      "on-background": "#e2e2e3",
+                      "tertiary-fixed-dim": "#00dce5",
+                      "surface-dim": "#121415",
+                      "primary-container": "#ff5f00",
+                      "primary-fixed": "#ffdbce",
+                      "inverse-surface": "#e2e2e3",
+                      "on-tertiary-fixed": "#002021",
+                      "inverse-on-surface": "#2f3132",
+                      "on-tertiary": "#003739",
+                      "on-tertiary-container": "#003235",
+                      "primary": "#ffb599",
+                      "success-green": "#10B981",
+                      "tertiary-container": "#00a4ab",
+                      "on-error": "#690005",
+                      "on-error-container": "#ffdad6",
+                      "primary-fixed-dim": "#ffb599",
+                      "on-secondary-fixed-variant": "#005236",
+                      "surface": "#121415",
+                      "on-primary": "#5a1c00",
+                      "surface-bright": "#1F2223",
+                      "inverse-primary": "#a63b00",
+                      "brand-orange": "#FF5F00",
+                      "on-secondary-fixed": "#002113",
+                      "error-container": "#93000a",
+                      "outline": "#ab8a7d",
+                      "outline-variant": "#5b4137",
+                      "on-tertiary-fixed-variant": "#004f53",
+                      "ai-glow": "#00F5FF",
+                      "secondary-fixed": "#6ffbbe",
+                      "surface-near-black": "#0A0C0D",
+                      "on-surface-variant": "#e4bfb1",
+                      "surface-tint": "#ffb599",
+                      "surface-container-high": "#282a2b",
+                      "surface-container-lowest": "#0c0e0f",
+                      "on-surface": "#e2e2e3",
+                      "secondary-container": "#00a572",
+                      "secondary": "#4edea3",
+                      "tertiary": "#00dce5",
+                      "on-primary-fixed-variant": "#7f2b00",
+                      "surface-container-highest": "#333536",
+                      "tertiary-fixed": "#63f7ff",
+                      "on-primary-fixed": "#370e00",
+                      "surface-container-low": "#1a1c1d",
+                      "on-secondary-container": "#00311f",
+                      "background": "#121415"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max": "1280px",
+                      "gutter": "24px",
+                      "base": "8px",
+                      "margin-desktop": "64px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "label-caps": [
+                              "JetBrains Mono"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "data-mono": [
+                              "JetBrains Mono"
+                      ],
+                      "title-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "headline-lg-mobile": [
+                              "Hanken Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "data-mono": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "title-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: #121415;
+            color: #e2e2e3;
+        }
+        .glow-effect {
+            box-shadow: 0 0 12px 0 rgba(255, 95, 0, 0.2);
+        }
+        .glass-card {
+            background: rgba(30, 32, 33, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-input {
+            background: rgba(18, 20, 21, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-input:focus {
+            border-color: #FF5F00;
+            box-shadow: 0 0 12px 0 rgba(255, 95, 0, 0.2);
+            outline: none;
+        }
+    </style>
+</head>
+<body class="font-body-lg text-body-lg antialiased">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface border-b border-white/10 docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20 px-margin-mobile md:px-margin-desktop">
+<div class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-brand-orange dark:text-brand-orange">
+                Layboka AI
+            </div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-brand-orange font-bold border-b-2 border-brand-orange pb-1 hover:text-brand-orange transition-colors duration-200" href="#">Product</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-brand-orange transition-colors duration-200" href="#">Solutions</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-brand-orange transition-colors duration-200" href="#">Pricing</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-brand-orange transition-colors duration-200" href="#">Resources</a>
+</nav>
+<div class="flex gap-4 items-center">
+<a class="hidden md:block text-on-surface hover:text-brand-orange transition-colors duration-200 font-body-sm text-body-sm" href="#">Login</a>
+<a class="bg-brand-orange text-black px-4 py-2 md:px-6 md:py-2 rounded font-body-sm text-body-sm font-semibold hover:bg-opacity-90 transition-all duration-200 glow-effect" href="#">Get Started</a>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative pt-20 pb-16 md:pt-32 md:pb-20 overflow-hidden flex flex-col items-center justify-center text-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="absolute inset-0 w-full h-full opacity-20 pointer-events-none" style="background: radial-gradient(circle at center, #FF5F00 0%, transparent 60%);"></div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-display-lg md:text-display-lg text-on-surface mb-4 md:mb-6 relative z-10 max-w-4xl">
+                Next-Gen AI Sales Executive for Shopify
+            </h1>
+<p class="font-body-lg text-body-lg md:font-title-md md:text-title-md text-on-surface-variant mb-8 md:mb-12 max-w-2xl relative z-10 px-4">
+                Recover revenue, automate sales, and provide elite customer service 24/7 with a 5-day free trial. No credit card required.
+            </p>
+<!-- Shopify Installation Card -->
+<div class="glass-card rounded-xl p-6 md:p-8 max-w-xl w-full relative z-10 glow-effect border-brand-orange/30 mx-4">
+<div class="mb-6 flex flex-col gap-2 text-left">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider" for="shopify-url">Shopify Store URL</label>
+<div class="flex flex-col sm:flex-row gap-4">
+<input class="glass-input rounded-lg px-4 py-3 flex-1 text-on-surface placeholder:text-surface-variant font-body-lg text-body-lg transition-all duration-200" id="shopify-url" placeholder="store.myshopify.com" type="text"/>
+<button class="bg-brand-orange text-black px-8 py-3 rounded-lg font-body-lg text-body-lg font-bold hover:bg-opacity-90 transition-all duration-200 whitespace-nowrap glow-effect flex items-center justify-center gap-2">
+<span>Install Now</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-center gap-2 text-success-green font-body-sm text-body-sm mt-4 text-center">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span>5-Second Installation. No Credit Card Required.</span>
+</div>
+</div>
+</section>
+<!-- How to Install Steps -->
+<section class="py-16 md:py-20 px-margin-mobile md:px-margin-desktop bg-surface-near-black">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-center mb-12 md:mb-16 text-on-surface">Deploy in Seconds</h2>
+<div class="flex flex-col md:grid md:grid-cols-3 gap-6 md:gap-gutter">
+<!-- Step 1 -->
+<div class="glass-card rounded-xl p-6 md:p-8 flex flex-col items-center text-center relative border-t-2 border-t-brand-orange/50">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center font-title-md text-title-md font-bold text-brand-orange mb-4 md:mb-6 border border-white/10 glow-effect">1</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-2 md:mb-3">Enter URL</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm">Input your Shopify store URL to begin the secure integration process.</p>
+</div>
+<!-- Step 2 -->
+<div class="glass-card rounded-xl p-6 md:p-8 flex flex-col items-center text-center relative border-t-2 border-t-brand-orange/50">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center font-title-md text-title-md font-bold text-brand-orange mb-4 md:mb-6 border border-white/10 glow-effect">2</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-2 md:mb-3">Authorize AI</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm">Grant Layboka AI access to seamlessly read products and manage interactions.</p>
+</div>
+<!-- Step 3 -->
+<div class="glass-card rounded-xl p-6 md:p-8 flex flex-col items-center text-center relative border-t-2 border-t-success-green/50">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center font-title-md text-title-md font-bold text-success-green mb-4 md:mb-6 border border-white/10" style="box-shadow: 0 0 12px 0 rgba(16, 185, 129, 0.2);">3</div>
+<h3 class="font-title-md text-title-md text-on-surface mb-2 md:mb-3">Deploy Executive</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm">Your AI sales executive instantly goes live, ready to recover revenue.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us / Bento Grid -->
+<section class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface">
+<div class="max-w-container-max mx-auto">
+<div class="mb-10 md:mb-16">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface mb-3 md:mb-4">Engineered for Commerce</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg max-w-2xl">Lethal precision meets raw computational power to dominate your sales pipeline.</p>
+</div>
+<div class="flex flex-col md:grid md:grid-cols-4 gap-6 md:gap-gutter md:auto-rows-min">
+<!-- Feature 1: Large Span -->
+<div class="md:col-span-2 md:row-span-2 glass-card rounded-xl p-6 md:p-8 flex flex-col overflow-hidden relative group">
+<div class="absolute top-0 right-0 p-4 md:p-6 opacity-20 group-hover:opacity-40 transition-opacity duration-300">
+<span class="material-symbols-outlined text-5xl md:text-6xl text-brand-orange" style="font-variation-settings: 'FILL' 1;">monitoring</span>
+</div>
+<div class="mt-auto relative z-10 pt-24 md:pt-32">
+<h3 class="font-title-md text-title-md text-on-surface mb-2 md:mb-3">24/7 Revenue Recovery</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm mb-4 md:mb-6">Relentlessly pursue abandoned carts and hesitating buyers with perfectly timed, personalized interventions that convert lost opportunities into hard capital.</p>
+<div class="flex items-center gap-2 text-success-green font-data-mono text-data-mono bg-success-green/10 px-3 py-1 rounded inline-flex border border-success-green/20">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                                +24.8% Conv. Rate
+                            </div>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="md:col-span-2 flex flex-col gap-4">
+<!-- Card 1: Objection Handling -->
+<div class="glass-card rounded-xl p-6 flex items-start gap-4 border-l-4 border-l-tertiary">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0 border border-white/5">
+<span class="material-symbols-outlined text-tertiary text-xl">memory</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface mb-1">Objection Handling</h4>
+<p class="text-on-surface-variant font-body-sm text-body-sm">Real-time counter-arguments based on pricing or shipping hesitations.</p>
+</div>
+</div>
+<!-- Card 2: Dynamic Routing -->
+<div class="glass-card rounded-xl p-6 flex items-start gap-4 border-l-4 border-l-tertiary">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0 border border-white/5">
+<span class="material-symbols-outlined text-tertiary text-xl">account_tree</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface mb-1">Dynamic Routing</h4>
+<p class="text-on-surface-variant font-body-sm text-body-sm">Seamless handover to human agents for complex queries.</p>
+</div>
+</div>
+<!-- Card 3: Sentiment Analysis -->
+<div class="glass-card rounded-xl p-6 flex items-start gap-4 border-l-4 border-l-tertiary">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0 border border-white/5">
+<span class="material-symbols-outlined text-tertiary text-xl">analytics</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface mb-1">Sentiment Analysis</h4>
+<p class="text-on-surface-variant font-body-sm text-body-sm">Adapts tone based on customer frustration or excitement.</p>
+</div>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="md:col-span-1 glass-card rounded-xl p-6 flex flex-col">
+<span class="material-symbols-outlined text-brand-orange text-3xl mb-3 md:mb-4" style="font-variation-settings: 'FILL' 1;">diamond</span>
+<h3 class="font-title-md text-title-md text-on-surface mb-1 md:mb-2">VIP Logic</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm">Dynamic tier recognition to prioritize high-LTV customers instantly.</p>
+</div>
+<!-- Feature 4 -->
+<div class="md:col-span-1 glass-card rounded-xl p-6 flex flex-col">
+<span class="material-symbols-outlined text-secondary text-3xl mb-3 md:mb-4" style="font-variation-settings: 'FILL' 1;">forum</span>
+<h3 class="font-title-md text-title-md text-on-surface mb-1 md:mb-2">Multi-Channel</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm">Seamless operation across chat, SMS, and email touchpoints.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-near-black dark:bg-surface-near-black border-t border-white/5 full-width pb-24">
+<div class="w-full py-10 md:py-12 px-margin-desktop max-w-container-max mx-auto flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-8 items-center md:items-start px-margin-mobile md:px-margin-desktop text-center md:text-left">
+<div class="flex flex-col gap-2">
+<div class="font-title-md text-title-md font-bold text-on-surface">
+                    Layboka AI
+                </div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+                    © 2024 Layboka AI. Precision engineered for commerce.
+                </div>
+</div>
+<div class="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-3">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-brand-orange transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-brand-orange transition-colors" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-brand-orange transition-colors" href="#">Security</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-brand-orange transition-colors" href="#">Status</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-brand-orange transition-colors" href="#">Contact Sales</a>
+</div>
+</div>
+</footer>
+<nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-surface-container/80 backdrop-blur-md border-t border-white/10 px-4 py-3">
+<div class="flex justify-around items-center">
+<a class="flex flex-col items-center gap-1 text-brand-orange" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-brand-orange transition-colors" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Features</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-brand-orange transition-colors" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Pricing</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-brand-orange transition-colors" href="#">
+<span class="material-symbols-outlined">download</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Install</span>
+</a>
+</div>
+</nav></body></html>
