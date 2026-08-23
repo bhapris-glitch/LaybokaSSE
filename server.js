@@ -1,4 +1,4 @@
-<html><head></head><body>/**
+/*<html><head></head><body>/**
  * server.js
  * Layboka AI | Production SaaS Entry Point
  * Handles routing for Landing, Dashboard, Admin, and Enterprise views.
