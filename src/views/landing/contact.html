@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us - Layboka AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#333536",
+                        "error": "#ffb4ab",
+                        "surface-bright": "#1F2223",
+                        "surface": "#121415",
+                        "inverse-on-surface": "#2f3132",
+                        "inverse-surface": "#e2e2e3",
+                        "on-background": "#e2e2e3",
+                        "on-tertiary-container": "#003235",
+                        "tertiary-fixed": "#63f7ff",
+                        "surface-container": "#1e2021",
+                        "background": "#121415",
+                        "brand-orange": "#FF5F00",
+                        "on-secondary-container": "#00311f",
+                        "primary": "#ffb599",
+                        "tertiary-container": "#00a4ab",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-tertiary": "#003739",
+                        "tertiary-fixed-dim": "#00dce5",
+                        "surface-container-high": "#282a2b",
+                        "surface-tint": "#ffb599",
+                        "on-tertiary-fixed": "#002021",
+                        "on-primary-fixed-variant": "#7f2b00",
+                        "primary-fixed-dim": "#ffb599",
+                        "outline": "#ab8a7d",
+                        "on-secondary": "#003824",
+                        "surface-dim": "#121415",
+                        "outline-variant": "#5b4137",
+                        "on-secondary-fixed-variant": "#005236",
+                        "surface-container-low": "#1a1c1d",
+                        "primary-fixed": "#ffdbce",
+                        "surface-container-highest": "#333536",
+                        "secondary-fixed-dim": "#4edea3",
+                        "surface-container-lowest": "#0c0e0f",
+                        "tertiary": "#00dce5",
+                        "primary-container": "#ff5f00",
+                        "secondary-container": "#00a572",
+                        "ai-glow": "#00F5FF",
+                        "on-surface": "#e2e2e3",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "secondary": "#4edea3",
+                        "inverse-primary": "#a63b00",
+                        "on-tertiary-fixed-variant": "#004f53",
+                        "on-surface-variant": "#e4bfb1",
+                        "on-primary": "#5a1c00",
+                        "on-primary-container": "#531a00",
+                        "on-primary-fixed": "#370e00",
+                        "on-secondary-fixed": "#002113",
+                        "on-error": "#690005",
+                        "surface-near-black": "#0A0C0D",
+                        "success-green": "#10B981"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "label-caps": ["JetBrains Mono"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "data-mono": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "title-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "data-mono": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glow-effect:focus-within {
+            box-shadow: 0 0 12px 0 rgba(255, 95, 0, 0.2);
+            border-color: #FF5F00;
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 12px 0 rgba(255, 95, 0, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-sm min-h-screen flex flex-col relative overflow-x-hidden">
+<!-- Background Pattern / Atmospheric Graphic -->
+<div class="absolute inset-0 z-0 pointer-events-none opacity-20" style="background-image: radial-gradient(circle at top right, rgba(255, 95, 0, 0.15) 0%, transparent 40%), radial-gradient(circle at bottom left, rgba(0, 245, 255, 0.05) 0%, transparent 30%);"></div>
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-surface border-b border-white/10 z-50 fixed w-full top-0">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-20">
+<div class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg font-bold text-brand-orange dark:text-brand-orange">
+                Layboka AI
+            </div>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-brand-orange transition-colors duration-200 font-body-lg text-body-lg" href="#">Product</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-brand-orange transition-colors duration-200 font-body-lg text-body-lg" href="#">Solutions</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-brand-orange transition-colors duration-200 font-body-lg text-body-lg" href="#">Pricing</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-brand-orange transition-colors duration-200 font-body-lg text-body-lg" href="#">Resources</a>
+</div>
+<div class="hidden md:flex items-center gap-4">
+<a class="text-on-surface-variant hover:text-brand-orange transition-colors duration-200 font-body-lg text-body-lg" href="#">Login</a>
+<button class="bg-brand-orange text-surface-near-black px-6 py-2 rounded font-body-lg text-body-lg font-medium btn-glow transition-shadow">Get Started</button>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined text-3xl" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-24 relative z-10 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<header class="mb-16">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-4 tracking-tight">Initialize Protocol</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Establish a direct link with Layboka AI central systems. Our engineering team monitors comms 24/7 for critical deployment support and enterprise inquiries.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-16">
+<!-- Contact Form (Left) -->
+<div class="lg:col-span-7">
+<div class="bg-surface-container border border-white/5 p-6 md:p-8 rounded-lg">
+<form action="#" class="space-y-6" method="POST">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase block" for="firstName">First Name</label>
+<input class="w-full bg-surface-bright border border-surface-variant rounded px-4 py-3 text-on-surface focus:outline-none glow-effect transition-all font-body-sm" id="firstName" placeholder="Enter first name" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase block" for="lastName">Last Name</label>
+<input class="w-full bg-surface-bright border border-surface-variant rounded px-4 py-3 text-on-surface focus:outline-none glow-effect transition-all font-body-sm" id="lastName" placeholder="Enter last name" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase block" for="email">Corporate Email</label>
+<input class="w-full bg-surface-bright border border-surface-variant rounded px-4 py-3 text-on-surface focus:outline-none glow-effect transition-all font-body-sm" id="email" placeholder="user@company.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase block" for="subject">Inquiry Type</label>
+<select class="w-full bg-surface-bright border border-surface-variant rounded px-4 py-3 text-on-surface focus:outline-none glow-effect transition-all font-body-sm appearance-none" id="subject">
+<option value="enterprise">Enterprise Integration</option>
+<option value="support">Technical Support</option>
+<option value="sales">Sales &amp; Licensing</option>
+<option value="other">Other</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase block" for="message">Transmission Log</label>
+<textarea class="w-full bg-surface-bright border border-surface-variant rounded px-4 py-3 text-on-surface focus:outline-none glow-effect transition-all font-body-sm resize-none" id="message" placeholder="Detail your requirements..." rows="5"></textarea>
+</div>
+<button class="w-full bg-brand-orange text-surface-near-black py-4 rounded font-title-md text-title-md font-semibold btn-glow transition-all hover:bg-opacity-90 flex items-center justify-center gap-2" type="submit">
+                                Send Message <span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+<p class="text-on-surface-variant text-center mt-4 opacity-70" style="font-size: 12px;">Transmissions are secured via end-to-end encryption protocols.</p>
+</form>
+</div>
+</div>
+<!-- Contact Details & Map (Right) -->
+<div class="lg:col-span-5 space-y-8">
+<div class="bg-surface-container border border-white/5 p-6 rounded-lg">
+<h3 class="font-title-md text-title-md text-on-surface mb-6 border-b border-white/5 pb-4">Direct Nodes</h3>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded bg-surface-bright flex items-center justify-center border border-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-brand-orange" data-icon="mail">mail</span>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Support Pipeline</h4>
+<a class="font-data-mono text-data-mono text-on-surface hover:text-brand-orange transition-colors" href="mailto:support@layboka.ai">support@layboka.ai</a>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded bg-surface-bright flex items-center justify-center border border-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-brand-orange" data-icon="terminal">terminal</span>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">Developer Ops</h4>
+<a class="font-data-mono text-data-mono text-on-surface hover:text-brand-orange transition-colors" href="mailto:dev@layboka.ai">dev@layboka.ai</a>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container border border-white/5 p-6 rounded-lg relative overflow-hidden group">
+<div class="relative z-10">
+<h3 class="font-title-md text-title-md text-on-surface mb-6 border-b border-white/5 pb-4">Physical HQ</h3>
+<div class="flex items-start gap-4 mb-4">
+<div class="w-10 h-10 rounded bg-surface-bright flex items-center justify-center border border-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-brand-orange" data-icon="location_on">location_on</span>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-1">San Francisco Hub</h4>
+<p class="font-body-sm text-body-sm text-on-surface">345 Spear Street<br/>San Francisco, CA 94105<br/>United States</p>
+</div>
+</div>
+</div>
+<!-- Abstract Map Visual Placeholder -->
+<div class="h-32 w-full mt-4 bg-surface-bright rounded border border-surface-variant relative overflow-hidden" data-alt="A highly stylized, dark-mode digital map of San Francisco viewed from above. The map features minimal grid lines in dark gray and black, representing streets and terrain. Key nodes and intersections are highlighted with subtle, glowing neon orange and cyan dots. The overall mood is high-tech, precise, and cyberpunk-adjacent, fitting seamlessly into a dark, sophisticated UI dashboard environment." data-location="San Francisco" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBEftk3GPQw5Z9MlKziaf7ieaoIswnRHyzSlIwFlJjWVK6pta6NYuuqtzORqU_UpUUMizZnr0SVZzoJ9opSwn5DHNVEJEcrlau2PMX_teN1MGR6bpRRZuvUXCxsxMC-fntuhVpoKbYkSnnCGYJC4ho91I2-k6yzpbkxpMgCxXYm-6Cg_hUk861zNZxtxZbJc5e_LFpbskGebMNQxCDL9btr7I7wmbXtSyrey88-M7wYN_yT8uhGPk8z')">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-60 pointer-events-none"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-near-black dark:bg-surface-near-black border-t border-white/5 mt-auto relative z-20">
+<div class="w-full py-12 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<div>
+<div class="font-title-md text-title-md font-bold text-on-surface mb-2">
+                    Layboka AI
+                </div>
+<div class="font-body-sm text-body-sm text-brand-orange dark:text-brand-orange">
+                    © 2024 Layboka AI. Precision engineered for commerce.
+                </div>
+</div>
+<div class="flex flex-wrap gap-6 md:justify-end">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-brand-orange transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-brand-orange transition-colors" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-brand-orange transition-colors" href="#">Security</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-brand-orange transition-colors" href="#">Status</a>
+<a class="font-body-sm text-body-sm text-success-green font-medium hover:text-brand-orange transition-colors" href="#">Contact Sales</a>
+</div>
+</div>
+</footer>
+</body></html>
