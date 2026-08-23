@@ -1,6 +1,6 @@
 {
   "name": "layboka-ai",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "AI-powered sales executive and revenue recovery platform for Shopify merchants.",
   "main": "server.js",
   "scripts": {
@@ -14,7 +14,8 @@
     "chatbot",
     "ecommerce",
     "sales",
-    "automation"
+    "automation",
+    "revenue-recovery"
   ],
   "author": "Layboka AI Team",
   "license": "MIT",
@@ -24,7 +25,8 @@
     "dotenv": "^16.3.1",
     "cors": "^2.8.5",
     "helmet": "^7.0.0",
-    "compression": "^1.7.4"
+    "compression": "^1.7.4",
+    "stripe": "^13.11.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
