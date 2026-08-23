@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Transmission Confirmed - Layboka AI</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts for Brand Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config injected from Style Guidance -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#2f3132",
+                        "surface-container": "#1e2021",
+                        "inverse-surface": "#e2e2e3",
+                        "outline-variant": "#5b4137",
+                        "error-container": "#93000a",
+                        "tertiary": "#00dce5",
+                        "on-primary": "#5a1c00",
+                        "on-secondary": "#003824",
+                        "tertiary-fixed": "#63f7ff",
+                        "surface-near-black": "#0A0C0D",
+                        "on-tertiary-fixed-variant": "#004f53",
+                        "surface-variant": "#333536",
+                        "tertiary-fixed-dim": "#00dce5",
+                        "on-secondary-container": "#00311f",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-error-container": "#ffdad6",
+                        "on-error": "#690005",
+                        "on-surface-variant": "#e4bfb1",
+                        "on-secondary-fixed-variant": "#005236",
+                        "tertiary-container": "#00a4ab",
+                        "surface": "#121415",
+                        "outline": "#ab8a7d",
+                        "on-tertiary-container": "#003235",
+                        "inverse-primary": "#a63b00",
+                        "on-tertiary-fixed": "#002021",
+                        "ai-glow": "#00F5FF",
+                        "secondary": "#4edea3",
+                        "on-primary-fixed-variant": "#7f2b00",
+                        "surface-container-high": "#282a2b",
+                        "surface-tint": "#ffb599",
+                        "on-surface": "#e2e2e3",
+                        "on-primary-container": "#531a00",
+                        "error": "#ffb4ab",
+                        "secondary-fixed": "#6ffbbe",
+                        "brand-orange": "#FF5F00",
+                        "surface-container-low": "#1a1c1d",
+                        "on-background": "#e2e2e3",
+                        "on-primary-fixed": "#370e00",
+                        "primary-fixed": "#ffdbce",
+                        "background": "#121415",
+                        "secondary-container": "#00a572",
+                        "on-secondary-fixed": "#002113",
+                        "surface-bright": "#1F2223",
+                        "surface-container-highest": "#333536",
+                        "success-green": "#10B981",
+                        "on-tertiary": "#003739",
+                        "primary": "#ffb599",
+                        "primary-container": "#ff5f00",
+                        "surface-dim": "#121415",
+                        "primary-fixed-dim": "#ffb599",
+                        "surface-container-lowest": "#0c0e0f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-sm": ["Inter"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "title-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "data-mono": ["JetBrains Mono"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "data-mono": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom animations for the high-tech reveal */
+        @keyframes pulse-glow {
+            0%, 100% { filter: drop-shadow(0 0 12px rgba(16, 185, 129, 0.4)); transform: scale(1); }
+            50% { filter: drop-shadow(0 0 24px rgba(16, 185, 129, 0.8)); transform: scale(1.05); }
+        }
+        
+        @keyframes fade-slide-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-pulse-glow {
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+
+        .animate-reveal {
+            opacity: 0;
+            animation: fade-slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        
+        /* Grid background pattern */
+        .bg-tech-grid {
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<!-- Note: Navigation components (TopAppBar, SideNavBar, BottomNavBar) are explicitly suppressed here 
+     as per the 'Shell Visibility & Relevance' rule for linear/transactional success screens. -->
+<body class="bg-surface-near-black text-on-surface min-h-screen flex flex-col relative overflow-hidden bg-tech-grid">
+<!-- Subtle ambient glow in the background center -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+<div class="w-[300px] h-[300px] rounded-full bg-success-green/5 blur-[120px]"></div>
+</div>
+<!-- Main Content Container (Centered for Mobile Optimization) -->
+<main class="flex-grow flex items-center justify-center p-margin-mobile w-full max-w-container-max mx-auto relative z-10">
+<div class="flex flex-col items-center text-center w-full max-w-sm">
+<!-- Glowing Success Indicator -->
+<div class="mb-8 relative animate-reveal">
+<!-- Decorative outer ring -->
+<div class="absolute inset-0 rounded-full border border-success-green/20 scale-[1.5] animate-pulse-glow" style="animation-duration: 4s;"></div>
+<div class="absolute inset-0 rounded-full border border-success-green/40 scale-[1.2] animate-pulse-glow delay-100" style="animation-duration: 3s;"></div>
+<span class="material-symbols-outlined text-[80px] text-success-green drop-shadow-[0_0_16px_rgba(16,185,129,0.5)]" style="font-variation-settings: 'FILL' 0, 'wght' 300;">
+                    task_alt
+                </span>
+</div>
+<!-- Typography Stack -->
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-4 animate-reveal delay-100">
+                Transmission Confirmed
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 animate-reveal delay-200">
+                Your data package has been encrypted and securely routed. Our intelligent systems are currently processing the parameters and will initiate contact shortly.
+            </p>
+<!-- Actions -->
+<div class="w-full flex flex-col gap-4 animate-reveal delay-300">
+<!-- Primary Action: Solid Dark Orange per brand guidelines -->
+<button class="w-full h-14 bg-brand-orange text-surface-near-black font-title-md text-title-md rounded flex items-center justify-center gap-2 hover:bg-opacity-90 transition-colors shadow-[0_0_12px_rgba(255,95,0,0.2)] active:scale-[0.98]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 500;">home</span>
+                    Return to Home
+                </button>
+<!-- Tertiary/Ghost Action -->
+<button class="w-full h-12 bg-transparent text-tertiary-fixed-dim font-label-caps text-label-caps rounded flex items-center justify-center hover:bg-surface-container transition-colors">
+                    View Transmission Log
+                </button>
+</div>
+<!-- Terminal style status footer (Decorative) -->
+<div class="mt-16 pt-4 border-t border-outline-variant/20 w-full flex justify-between items-center opacity-60 animate-reveal delay-300">
+<span class="font-data-mono text-label-caps text-success-green flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-success-green animate-pulse"></span>
+                    SYS.NOMINAL
+                </span>
+<span class="font-data-mono text-label-caps text-on-surface-variant">
+                    TS: <span id="timestamp"></span>
+</span>
+</div>
+</div>
+</main>
+<script>
+        // Set dynamic pseudo-timestamp for the high-tech aesthetic
+        document.addEventListener('DOMContentLoaded', () => {
+            const timestampEl = document.getElementById('timestamp');
+            if(timestampEl) {
+                const now = new Date();
+                timestampEl.textContent = now.toISOString().split('T')[1].substring(0, 8) + 'Z';
+            }
+        });
+    </script>
+</body></html>
