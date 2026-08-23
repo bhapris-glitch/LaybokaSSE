@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Executive Configuration - Mobile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&amp;family=Inter:wght@400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#0c0e0f",
+                    "secondary-container": "#00a572",
+                    "on-tertiary-container": "#003235",
+                    "secondary-fixed-dim": "#4edea3",
+                    "error-container": "#93000a",
+                    "on-primary": "#5a1c00",
+                    "brand-orange": "#FF5F00",
+                    "inverse-primary": "#a63b00",
+                    "primary-fixed": "#ffdbce",
+                    "primary": "#ffb599",
+                    "primary-container": "#ff5f00",
+                    "surface-bright": "#38393a",
+                    "outline": "#ab8a7d",
+                    "surface-tint": "#ffb599",
+                    "surface-near-black": "#0A0C0D",
+                    "outline-variant": "#5b4137",
+                    "error": "#ffb4ab",
+                    "inverse-on-surface": "#2f3132",
+                    "background": "#121415",
+                    "on-secondary-fixed-variant": "#005236",
+                    "surface-container": "#141718",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-fixed": "#370e00",
+                    "surface-dim": "#121415",
+                    "inverse-surface": "#e2e2e3",
+                    "on-surface-variant": "#e4bfb1",
+                    "surface-variant": "#333536",
+                    "on-secondary-container": "#00311f",
+                    "on-primary-fixed-variant": "#7f2b00",
+                    "on-background": "#e2e2e3",
+                    "tertiary-container": "#00a4ab",
+                    "surface": "#121415",
+                    "on-tertiary": "#003739",
+                    "on-error": "#690005",
+                    "primary-fixed-dim": "#ffb599",
+                    "tertiary-fixed": "#63f7ff",
+                    "surface-container-high": "#282a2b",
+                    "on-tertiary-fixed-variant": "#004f53",
+                    "secondary-fixed": "#6ffbbe",
+                    "tertiary-fixed-dim": "#00dce5",
+                    "on-surface": "#e2e2e3",
+                    "on-primary-container": "#531a00",
+                    "ai-glow": "#00F5FF",
+                    "surface-container-highest": "#333536",
+                    "tertiary": "#00dce5",
+                    "surface-container-low": "#1a1c1d",
+                    "on-secondary": "#003824",
+                    "on-tertiary-fixed": "#002021",
+                    "success-green": "#10B981",
+                    "on-secondary-fixed": "#002113",
+                    "secondary": "#4edea3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "margin-desktop": "64px",
+                    "base": "8px",
+                    "container-max": "1280px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "title-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "headline-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "data-mono": [
+                            "JetBrains Mono"
+                    ],
+                    "body-sm": [
+                            "Inter"
+                    ],
+                    "display-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-lg-mobile": [
+                            "Hanken Grotesk"
+                    ],
+                    "label-caps": [
+                            "JetBrains Mono"
+                    ]
+            },
+            "fontSize": {
+                    "title-md": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-lg": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "data-mono": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "500"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0A0C0D;
+            color: #e2e2e3;
+        }
+        .glow-effect {
+            box-shadow: 0 0 12px rgba(255, 95, 0, 0.2);
+        }
+        .ai-glow-border {
+            border-color: rgba(255, 95, 0, 0.5);
+            box-shadow: 0 0 15px rgba(255, 95, 0, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-near-black font-body-sm pb-24">
+<!-- Mobile Top Header -->
+<header class="sticky top-0 z-50 bg-surface-container/80 backdrop-blur-xl border-b border-outline-variant/10 px-margin-mobile py-4 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-brand-orange text-2xl">smart_toy</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">AI Executive</h1>
+</div>
+<button class="bg-surface-container-high p-2 rounded-lg text-on-surface hover:text-brand-orange transition-colors">
+<span class="material-symbols-outlined">save</span>
+</button>
+</header>
+<main class="px-margin-mobile py-6 space-y-6">
+<!-- Identity & Persona Section -->
+<section class="bg-surface-container border border-outline-variant/10 rounded-xl p-4 shadow-lg">
+<h2 class="font-title-md text-title-md text-on-surface mb-4 flex items-center gap-2 border-b border-outline-variant/10 pb-2">
+<span class="material-symbols-outlined text-brand-orange">id_card</span>
+                Identity &amp; Persona
+            </h2>
+<div class="space-y-4">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">Store Name</label>
+<input class="w-full bg-surface-container-high border border-outline-variant/30 rounded-lg px-3 py-2 text-on-surface focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange glow-effect transition-all" type="text" value="Layboka Store"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">Welcome Message</label>
+<textarea class="w-full bg-surface-container-high border border-outline-variant/30 rounded-lg px-3 py-2 text-on-surface focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange glow-effect transition-all" rows="3">Welcome back! I am your AI Executive. How can I assist you with your store today?</textarea>
+</div>
+</div>
+</section>
+<!-- Executive Settings Section -->
+<section class="bg-surface-container border border-outline-variant/10 rounded-xl p-4 shadow-lg">
+<h2 class="font-title-md text-title-md text-on-surface mb-4 flex items-center gap-2 border-b border-outline-variant/10 pb-2">
+<span class="material-symbols-outlined text-secondary">tune</span>
+                Executive Settings
+            </h2>
+<div class="space-y-4">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">Executive Name</label>
+<input class="w-full bg-surface-container-high border border-outline-variant/30 rounded-lg px-3 py-2 text-on-surface focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange glow-effect transition-all" type="text" value="Aria"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">Region</label>
+<select class="w-full bg-surface-container-high border border-outline-variant/30 rounded-lg px-3 py-2 text-on-surface focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange glow-effect transition-all">
+<option>North America (NA)</option>
+<option>Europe (EU)</option>
+<option>Asia Pacific (APAC)</option>
+</select>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">Personality</label>
+<select class="w-full bg-surface-container-high border border-outline-variant/30 rounded-lg px-3 py-2 text-on-surface focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange glow-effect transition-all">
+<option>Professional</option>
+<option>Friendly</option>
+<option>Direct</option>
+</select>
+</div>
+</div>
+</div>
+</section>
+<!-- Visual Assets Section -->
+<section class="bg-surface-container border border-outline-variant/10 rounded-xl p-4 shadow-lg">
+<h2 class="font-title-md text-title-md text-on-surface mb-4 flex items-center gap-2 border-b border-outline-variant/10 pb-2">
+<span class="material-symbols-outlined text-tertiary">wallpaper</span>
+                Visual Assets
+            </h2>
+<div class="flex flex-col items-center justify-center py-4">
+<div class="relative mb-4">
+<img class="w-32 h-32 rounded-full object-cover border-2 ai-glow-border" data-alt="A highly detailed, futuristic 3D render of a female AI executive avatar. She has sleek, dark bob-cut hair and is wearing a sharp, modern charcoal business suit with subtle glowing orange accents along the lapels. The lighting is dramatic, high-contrast cinematic studio lighting, emphasizing the sleek textures and a glowing, digital ambiance against a deep dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOAXDi5RRzLqHscMpGvuCVON5GNPmOUyMIRUaP_DSX8IL3wrjtkWp7P99w-lrqj8ZC3QNfR9QeZVCWTrBgm0quD_uCqD1DMsPHkvnr2yklBJ8eFntre8rHUCc6ImBdPf-So3toxO70Uyp_iJHm1SH082liiF2vnAZTtU19lHXd7f8ej5coE0pElQ3wUrzWKDiHUmv7CDS9dcf4gfrfC8qN9vVMnQp1ZseXEBuMZ_u9IhGocPyKbK6o"/>
+<button class="absolute bottom-0 right-0 bg-brand-orange text-surface-near-black p-2 rounded-full shadow-lg hover:bg-opacity-90">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">edit</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center">Customize your AI's appearance.</p>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full bg-surface-container-low border-t border-outline-variant/10 px-4 py-3 flex justify-between items-center z-50 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
+<a class="flex flex-col items-center text-on-surface-variant hover:text-on-surface px-4 py-1" href="#">
+<span class="material-symbols-outlined mb-1">dashboard</span>
+<span class="font-label-caps text-[10px]">Overview</span>
+</a>
+<!-- Active Tab -->
+<a class="flex flex-col items-center text-brand-orange px-4 py-1" href="#">
+<div class="bg-primary-container/20 rounded-full p-1 mb-1 glow-effect">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<span class="font-label-caps text-[10px] font-bold">AI Executive</span>
+</a>
+<a class="flex flex-col items-center text-on-surface-variant hover:text-on-surface px-4 py-1" href="#">
+<span class="material-symbols-outlined mb-1">query_stats</span>
+<span class="font-label-caps text-[10px]">Analytics</span>
+</a>
+<a class="flex flex-col items-center text-on-surface-variant hover:text-on-surface px-4 py-1" href="#">
+<span class="material-symbols-outlined mb-1">integration_instructions</span>
+<span class="font-label-caps text-[10px]">Integrations</span>
+</a>
+</nav>
+</body></html>
