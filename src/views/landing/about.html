@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | Layboka AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#333536",
+                        "error": "#ffb4ab",
+                        "surface-bright": "#1F2223",
+                        "surface": "#121415",
+                        "inverse-on-surface": "#2f3132",
+                        "inverse-surface": "#e2e2e3",
+                        "on-background": "#e2e2e3",
+                        "on-tertiary-container": "#003235",
+                        "tertiary-fixed": "#63f7ff",
+                        "surface-container": "#1e2021",
+                        "background": "#121415",
+                        "brand-orange": "#FF5F00",
+                        "on-secondary-container": "#00311f",
+                        "primary": "#ffb599",
+                        "tertiary-container": "#00a4ab",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-tertiary": "#003739",
+                        "tertiary-fixed-dim": "#00dce5",
+                        "surface-container-high": "#282a2b",
+                        "surface-tint": "#ffb599",
+                        "on-tertiary-fixed": "#002021",
+                        "on-primary-fixed-variant": "#7f2b00",
+                        "primary-fixed-dim": "#ffb599",
+                        "outline": "#ab8a7d",
+                        "on-secondary": "#003824",
+                        "surface-dim": "#121415",
+                        "outline-variant": "#5b4137",
+                        "on-secondary-fixed-variant": "#005236",
+                        "surface-container-low": "#1a1c1d",
+                        "primary-fixed": "#ffdbce",
+                        "surface-container-highest": "#333536",
+                        "secondary-fixed-dim": "#4edea3",
+                        "surface-container-lowest": "#0c0e0f",
+                        "tertiary": "#00dce5",
+                        "primary-container": "#ff5f00",
+                        "secondary-container": "#00a572",
+                        "ai-glow": "#00F5FF",
+                        "on-surface": "#e2e2e3",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "secondary": "#4edea3",
+                        "inverse-primary": "#a63b00",
+                        "on-tertiary-fixed-variant": "#004f53",
+                        "on-surface-variant": "#e4bfb1",
+                        "on-primary": "#5a1c00",
+                        "on-primary-container": "#531a00",
+                        "on-primary-fixed": "#370e00",
+                        "on-secondary-fixed": "#002113",
+                        "on-error": "#690005",
+                        "surface-near-black": "#0A0C0D",
+                        "success-green": "#10B981"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "label-caps": ["JetBrains Mono"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "data-mono": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "title-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "data-mono": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0A0C0D; /* surface-near-black */
+            color: #e2e2e3; /* on-surface */
+        }
+        .glow-effect:hover {
+            box-shadow: 0 0 12px 0 rgba(255, 95, 0, 0.2);
+        }
+        .layer-1-border {
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-body-lg">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface docked full-width top-0 bg-surface dark:bg-surface border-b border-white/10 flat no shadows z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-8">
+<a class="font-headline-lg text-headline-lg font-bold text-brand-orange dark:text-brand-orange" href="#">Layboka AI</a>
+<nav class="hidden md:flex gap-6">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-brand-orange transition-colors duration-200" href="#">Product</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-brand-orange transition-colors duration-200" href="#">Solutions</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-brand-orange transition-colors duration-200" href="#">Pricing</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-brand-orange transition-colors duration-200" href="#">Resources</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-brand-orange transition-colors" href="#">Login</a>
+<a class="font-label-caps text-label-caps bg-brand-orange text-surface-near-black px-6 py-2 rounded-DEFAULT font-bold hover:bg-opacity-90 transition-all glow-effect" href="#">Get Started</a>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative pt-32 pb-24 px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-6">Engineered for <span class="text-brand-orange">Commerce Precision</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-xl">
+                        Layboka AI is the definitive sales intelligence platform for Shopify merchants. We build high-performance neural architecture that translates raw data into dominant market strategies.
+                    </p>
+<div class="flex gap-4">
+<div class="flex items-center gap-2 border border-brand-orange/30 bg-surface-container px-4 py-2 rounded-DEFAULT layer-1-border">
+<span class="material-symbols-outlined text-success-green" style="font-variation-settings: 'FILL' 1;">monitoring</span>
+<span class="font-data-mono text-data-mono text-success-green">System Status: Optimal</span>
+</div>
+</div>
+</div>
+<div class="relative h-[500px] rounded-lg overflow-hidden layer-1-border">
+<div class="absolute inset-0 bg-surface-container mix-blend-overlay"></div>
+<img alt="Layboka AI Data Core" class="object-cover w-full h-full opacity-80" data-alt="A high-contrast, futuristic server room or data center bathed in deep black and vibrant dark orange lighting. The scene conveys immense computational power and precision engineering, with rows of sleek, monolithic server racks. Subtle glowing green LEDs indicate optimal system health. The aesthetic is high-tech, lethal, and sophisticated, reflecting a cutting-edge AI intelligence platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyf75lkiQoKURStNtUh9Xs_t-tWwddbQm4V1hhKokIugAeSli5cABb__LfIc0i4g6ec1syt2nVkIoIMf4ubUMjpWkBXNYIETp6PMwMyBVhFkYLhHSwDe5ZgzRmb4A-EodIkTIabDtAZvnYu5rpFddb0-Aoc9ONrBeVzt0ryHrLHrbMm5kEgWxVIZP-hyPPvgU9uRrplKBLci9gtktLku66BDuZJ7UUoofD_PuFYOoXomIHgu_E0QfM"/>
+</div>
+</div>
+</section>
+<!-- Our Mission & Vision Bento -->
+<section class="py-24 px-margin-desktop bg-surface-container-lowest border-y border-white/5">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Mission Card -->
+<div class="col-span-1 md:col-span-2 bg-surface-container rounded-lg p-8 layer-1-border relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-1 h-full bg-brand-orange"></div>
+<h2 class="font-title-md text-title-md text-on-surface mb-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-brand-orange" style="font-variation-settings: 'FILL' 1;">target</span>
+                            Our Mission
+                        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                            To eliminate guesswork in e-commerce. We deploy industrial-grade artificial intelligence to synthesize complex sales data, providing Shopify merchants with actionable, lethal precision insights that drive undeniable revenue growth.
+                        </p>
+</div>
+<!-- Vision Card -->
+<div class="col-span-1 bg-surface-bright rounded-lg p-8 layer-1-border relative">
+<h2 class="font-title-md text-title-md text-on-surface mb-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-success-green" style="font-variation-settings: 'FILL' 1;">visibility</span>
+                            Our Vision
+                        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                            A future where data superiority is democratized. We envision a commerce landscape where every merchant commands the analytical power of a global enterprise, powered autonomously by Layboka AI.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Technology Section -->
+<section class="py-24 px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<span class="font-label-caps text-label-caps text-brand-orange uppercase tracking-widest mb-2 block">Architecture</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">The 35-Part AI Engine</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4 max-w-2xl mx-auto">
+                    Built on a proprietary microservices architecture, our engine processes millions of data points with near-zero latency.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Tech Node 1 -->
+<div class="bg-surface-container p-6 rounded-lg layer-1-border hover:border-brand-orange/50 transition-colors duration-300">
+<span class="material-symbols-outlined text-brand-orange mb-4 text-3xl" style="font-variation-settings: 'FILL' 1;">memory</span>
+<h3 class="font-title-md text-title-md text-on-surface mb-2">Neural Processing</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Real-time pattern recognition across global commerce networks.</p>
+</div>
+<!-- Tech Node 2 -->
+<div class="bg-surface-container p-6 rounded-lg layer-1-border hover:border-brand-orange/50 transition-colors duration-300">
+<span class="material-symbols-outlined text-brand-orange mb-4 text-3xl" style="font-variation-settings: 'FILL' 1;">database</span>
+<h3 class="font-title-md text-title-md text-on-surface mb-2">Deep Data Ingestion</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Continuous synthesis of structured and unstructured Shopify metrics.</p>
+</div>
+<!-- Tech Node 3 -->
+<div class="bg-surface-container p-6 rounded-lg layer-1-border hover:border-brand-orange/50 transition-colors duration-300">
+<span class="material-symbols-outlined text-brand-orange mb-4 text-3xl" style="font-variation-settings: 'FILL' 1;">speed</span>
+<h3 class="font-title-md text-title-md text-on-surface mb-2">Low-Latency Execution</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sub-millisecond response times for dynamic pricing and inventory.</p>
+</div>
+<!-- Tech Node 4 -->
+<div class="bg-surface-container p-6 rounded-lg layer-1-border hover:border-brand-orange/50 transition-colors duration-300">
+<span class="material-symbols-outlined text-brand-orange mb-4 text-3xl" style="font-variation-settings: 'FILL' 1;">security</span>
+<h3 class="font-title-md text-title-md text-on-surface mb-2">Cryptographic Security</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Bank-grade encryption protocols protecting all merchant intelligence.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-near-black dark:bg-surface-near-black full-width bg-surface-near-black dark:bg-surface-near-black border-t border-white/5 flat no shadows">
+<div class="w-full py-12 px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<div>
+<span class="font-title-md text-title-md font-bold text-on-surface mb-2 block">Layboka AI</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">© 2024 Layboka AI. Precision engineered for commerce.</p>
+</div>
+<div class="flex flex-wrap gap-6 md:justify-end">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-brand-orange transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-brand-orange transition-colors" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-brand-orange transition-colors" href="#">Security</a>
+<a class="font-body-sm text-body-sm text-success-green font-medium hover:text-brand-orange transition-colors flex items-center gap-1" href="#">
+<span class="w-2 h-2 rounded-full bg-success-green inline-block"></span> Status
+                </a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-brand-orange transition-colors" href="#">Contact Sales</a>
+</div>
+</div>
+</footer>
+</body></html>
