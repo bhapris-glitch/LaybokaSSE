@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard - Layboka AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-background": "#e2e2e3",
+                "primary": "#ffb599",
+                "tertiary": "#00dce5",
+                "outline-variant": "#5b4137",
+                "surface-bright": "#1F2223",
+                "error-container": "#93000a",
+                "secondary": "#4edea3",
+                "surface-variant": "#333536",
+                "on-secondary": "#003824",
+                "primary-fixed": "#ffdbce",
+                "background": "#121415",
+                "surface-container-highest": "#333536",
+                "brand-orange": "#FF5F00",
+                "surface-tint": "#ffb599",
+                "on-surface": "#e2e2e3",
+                "tertiary-container": "#00a4ab",
+                "surface-near-black": "#0A0C0D",
+                "on-secondary-container": "#00311f",
+                "on-primary-container": "#531a00",
+                "secondary-container": "#00a572",
+                "primary-fixed-dim": "#ffb599",
+                "secondary-fixed": "#6ffbbe",
+                "on-tertiary": "#003739",
+                "on-secondary-fixed-variant": "#005236",
+                "ai-glow": "#00F5FF",
+                "surface-container-low": "#1a1c1d",
+                "on-primary-fixed": "#370e00",
+                "surface-dim": "#121415",
+                "inverse-surface": "#e2e2e3",
+                "on-tertiary-fixed-variant": "#004f53",
+                "on-tertiary-fixed": "#002021",
+                "success-green": "#10B981",
+                "secondary-fixed-dim": "#4edea3",
+                "on-surface-variant": "#e4bfb1",
+                "outline": "#ab8a7d",
+                "on-tertiary-container": "#003235",
+                "inverse-primary": "#a63b00",
+                "tertiary-fixed-dim": "#00dce5",
+                "on-secondary-fixed": "#002113",
+                "surface-container": "#141718",
+                "tertiary-fixed": "#63f7ff",
+                "surface-container-lowest": "#0c0e0f",
+                "on-primary-fixed-variant": "#7f2b00",
+                "surface": "#121415",
+                "surface-container-high": "#282a2b",
+                "on-error": "#690005",
+                "error": "#ffb4ab",
+                "inverse-on-surface": "#2f3132",
+                "primary-container": "#ff5f00",
+                "on-error-container": "#ffdad6",
+                "on-primary": "#5a1c00"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "base": "8px",
+                "gutter": "24px",
+                "container-max": "1280px",
+                "margin-desktop": "64px",
+                "margin-mobile": "16px"
+        },
+        "fontFamily": {
+                "title-md": [
+                        "Hanken Grotesk"
+                ],
+                "body-lg": [
+                        "Inter"
+                ],
+                "data-mono": [
+                        "JetBrains Mono"
+                ],
+                "headline-lg": [
+                        "Hanken Grotesk"
+                ],
+                "headline-lg-mobile": [
+                        "Hanken Grotesk"
+                ],
+                "body-sm": [
+                        "Inter"
+                ],
+                "display-lg": [
+                        "Hanken Grotesk"
+                ],
+                "label-caps": [
+                        "JetBrains Mono"
+                ]
+        },
+        "fontSize": {
+                "title-md": [
+                        "20px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "body-lg": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "data-mono": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        body {
+            font-family: 'Hanken Grotesk', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(10, 12, 13, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .ai-glow {
+            box-shadow: 0 0 15px rgba(255, 95, 0, 0.15);
+        }
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #FF5F00;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #FF5F00;
+        }
+    </style>
+</head>
+<body class="bg-surface-near-black text-on-background min-h-screen flex flex-col md:flex-row">
+<!-- TopNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface-near-black/80 backdrop-blur-md border-b border-outline-variant/10 shadow-sm docked full-width top-0 sticky z-50 flex justify-between items-center px-margin-mobile py-4 w-full">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-brand-orange">Layboka AI</div>
+<button class="text-brand-orange p-2">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</nav>
+<!-- SideNavBar (Desktop Only) -->
+<aside class="hidden md:flex flex-col h-full py-base bg-surface-container border-r border-outline-variant/10 shadow-lg fixed left-0 top-0 h-screen w-[280px] z-40">
+<div class="px-6 py-4 mb-8">
+<div class="font-headline-lg text-headline-lg font-bold text-brand-orange mb-2">Layboka AI</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Enterprise Tier</div>
+</div>
+<nav class="flex-1 overflow-y-auto space-y-1">
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-brand-orange hover:bg-surface-container-high transition-colors px-4 py-3 mx-2 rounded-lg font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span> Overview
+            </a>
+<a class="flex items-center gap-3 bg-brand-orange text-white rounded-lg px-4 py-3 mx-2 font-label-caps text-label-caps translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="smart_toy">smart_toy</span> AI Executive
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-brand-orange hover:bg-surface-container-high transition-colors px-4 py-3 mx-2 rounded-lg font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span> Analytics
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-brand-orange hover:bg-surface-container-high transition-colors px-4 py-3 mx-2 rounded-lg font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined" data-icon="integration_instructions">integration_instructions</span> Integrations
+            </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-brand-orange hover:bg-surface-container-high transition-colors px-4 py-3 mx-2 rounded-lg font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined" data-icon="stars">stars</span> Loyalty
+            </a>
+</nav>
+<div class="p-4 mt-auto border-t border-outline-variant/10">
+<button class="w-full bg-brand-orange text-white font-label-caps text-label-caps py-3 rounded-lg hover:bg-brand-orange/90 transition-colors mb-4">
+                Upgrade Plan
+            </button>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-brand-orange hover:bg-surface-container-high transition-colors px-4 py-2 mx-2 rounded-lg font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span> Settings
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-brand-orange hover:bg-surface-container-high transition-colors px-4 py-2 mx-2 rounded-lg font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span> Support
+                </a>
+</nav>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 md:ml-[280px] p-margin-mobile md:p-margin-desktop max-w-container-max mx-auto w-full">
+<header class="mb-8">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">Chatbot Settings</h1>
+<p class="text-on-surface-variant font-body-sm md:font-body-lg">Customize the persona, capabilities, and training logic of your virtual sales representative.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Profile & Settings -->
+<div class="lg:col-span-8 space-y-gutter">
+<!-- Profile Settings -->
+<section class="glass-panel p-6 rounded-xl ai-glow">
+<h2 class="font-title-md text-title-md text-brand-orange mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="person_outline">person_outline</span> Identity &amp; Persona
+                    </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div class="md:col-span-2">
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Store Name (BRAND_NAME)</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/30 text-on-surface rounded-lg p-3 focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-all outline-none font-body-sm" type="text" value="Layboka Store"/>
+</div>
+<div class="md:col-span-2">
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Welcome Message</label>
+<textarea class="w-full bg-surface-container-low border border-outline-variant/30 text-on-surface rounded-lg p-3 focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-all outline-none font-body-sm h-24" placeholder="Hi there! How can I help you today?">Hi there! I'm Alex, your personal shopping assistant. How can I help you today?</textarea>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Executive Name</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/30 text-on-surface rounded-lg p-3 focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-all outline-none font-body-sm" type="text" value="Alex"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Region / Accent</label>
+<select class="w-full bg-surface-container-low border border-outline-variant/30 text-on-surface rounded-lg p-3 focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-all outline-none font-body-sm appearance-none">
+<option>US (English)</option>
+<option>UK (English)</option>
+<option>CAD (English)</option>
+<option>UAE (Arabic/English)</option>
+<option>INDIA (English)</option>
+</select>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Gender Presentation</label>
+<div class="flex gap-4">
+<label class="flex items-center gap-2 text-body-sm cursor-pointer hover:text-brand-orange transition-colors">
+<input checked="" class="form-radio text-brand-orange bg-surface-container-low border-outline-variant/30 focus:ring-brand-orange" name="gender" type="radio"/>
+                                    Female
+                                </label>
+<label class="flex items-center gap-2 text-body-sm cursor-pointer hover:text-brand-orange transition-colors">
+<input class="form-radio text-brand-orange bg-surface-container-low border-outline-variant/30 focus:ring-brand-orange" name="gender" type="radio"/>
+                                    Male
+                                </label>
+<label class="flex items-center gap-2 text-body-sm cursor-pointer hover:text-brand-orange transition-colors">
+<input class="form-radio text-brand-orange bg-surface-container-low border-outline-variant/30 focus:ring-brand-orange" name="gender" type="radio"/>
+                                    Custom/Neutral
+                                </label>
+</div>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Sales Personality</label>
+<select class="w-full bg-surface-container-low border border-outline-variant/30 text-on-surface rounded-lg p-3 focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-all outline-none font-body-sm appearance-none">
+<option>Professional &amp; Direct</option>
+<option>Friendly &amp; Approachable</option>
+<option>Luxury &amp; Exclusive</option>
+<option>Energetic &amp; Persuasive</option>
+<option>Caring &amp; Consultative</option>
+<option>Casual &amp; Relatable</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Sales Features -->
+<section class="glass-panel p-6 rounded-xl">
+<h2 class="font-title-md text-title-md text-brand-orange mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="palette">palette</span> Theme &amp; Branding
+    </h2>
+<div class="space-y-6">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-4">Primary Accent Color</label>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<button class="flex items-center justify-center gap-2 p-3 rounded-lg border-2 border-brand-orange bg-brand-orange/10 text-brand-orange">
+<div class="w-4 h-4 rounded-full bg-[#FF5F00]"></div>
+<span class="font-label-caps text-label-caps">Orange</span>
+</button>
+<button class="flex items-center justify-center gap-2 p-3 rounded-lg border border-outline-variant/30 hover:border-brand-orange/50 transition-colors text-on-surface">
+<div class="w-4 h-4 rounded-full bg-[#10B981]"></div>
+<span class="font-label-caps text-label-caps">Green</span>
+</button>
+<button class="flex items-center justify-center gap-2 p-3 rounded-lg border border-outline-variant/30 hover:border-brand-orange/50 transition-colors text-on-surface">
+<div class="w-4 h-4 rounded-full bg-[#2e5bff]"></div>
+<span class="font-label-caps text-label-caps">Blue</span>
+</button>
+<button class="flex items-center justify-center gap-2 p-3 rounded-lg border border-outline-variant/30 hover:border-brand-orange/50 transition-colors text-on-surface">
+<div class="w-4 h-4 rounded-full bg-[#8B5CF6]"></div>
+<span class="font-label-caps text-label-caps">Purple</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Training Data -->
+<section class="glass-panel p-6 rounded-xl">
+<h2 class="font-title-md text-title-md text-brand-orange mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span> Behavioral Training
+                    </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="border border-success-green/20 rounded-lg p-4 bg-success-green/5">
+<h3 class="font-label-caps text-label-caps text-success-green mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]" data-icon="check_circle">check_circle</span> Winning Replies
+                            </h3>
+<ul class="space-y-3 font-body-sm text-body-sm text-on-surface">
+<li class="p-3 bg-surface-container-low rounded border border-outline-variant/10">"I noticed you looking at the Pro tier. Given your team size, I can offer a 10% bundle discount today."</li>
+<li class="p-3 bg-surface-container-low rounded border border-outline-variant/10">"Great choice! While that loads, would you like me to send over the integration guide?"</li>
+</ul>
+</div>
+<div class="border border-error/20 rounded-lg p-4 bg-error/5">
+<h3 class="font-label-caps text-label-caps text-error mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]" data-icon="cancel">cancel</span> Failed Replies
+                            </h3>
+<ul class="space-y-3 font-body-sm text-body-sm text-on-surface">
+<li class="p-3 bg-surface-container-low rounded border border-outline-variant/10">"Please check our FAQ page for pricing details." <span class="block text-error/70 text-[12px] mt-1">Reason: Not proactive enough.</span></li>
+<li class="p-3 bg-surface-container-low rounded border border-outline-variant/10">"I am an AI and cannot process refunds." <span class="block text-error/70 text-[12px] mt-1">Reason: Broke persona character.</span></li>
+</ul>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Avatars & Preview -->
+<div class="lg:col-span-4 space-y-gutter"><section class="glass-panel p-6 rounded-xl overflow-hidden">
+<h2 class="font-title-md text-title-md text-brand-orange mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span> Live Preview
+    </h2>
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant/10 p-4 relative min-h-[400px] flex flex-col">
+<div class="flex-1 flex flex-col justify-end items-end gap-4">
+<!-- Chat Window Mockup -->
+<div class="w-full bg-surface-container-high rounded-xl shadow-xl border border-outline-variant/10 overflow-hidden">
+<div class="bg-brand-orange p-3 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-white/20"></div>
+<div class="text-white font-label-caps text-[10px]">Alex - Layboka Store</div>
+</div>
+<div class="p-4 space-y-3">
+<div class="bg-surface-container-low p-2 rounded-lg rounded-tl-none text-[12px] max-w-[80%]">
+                        Hi there! I'm Alex, your personal shopping assistant. How can I help you today?
+                    </div>
+</div>
+<div class="p-3 border-t border-outline-variant/10 flex gap-2">
+<div class="flex-1 h-8 bg-surface-container-low rounded-full"></div>
+<div class="w-8 h-8 bg-brand-orange rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[16px]">send</span>
+</div>
+</div>
+</div>
+<!-- Chat Bubble Mockup -->
+<div class="w-12 h-12 bg-brand-orange rounded-full shadow-lg flex items-center justify-center ai-glow">
+<span class="material-symbols-outlined text-white">chat_bubble</span>
+</div>
+</div>
+<div class="absolute top-2 left-2 bg-surface-container-high/80 px-2 py-1 rounded text-[10px] font-label-caps text-on-surface-variant">Desktop Preview</div>
+</div>
+</section>
+<!-- Avatar Uploads -->
+<section class="glass-panel p-6 rounded-xl">
+<h2 class="font-title-md text-title-md text-brand-orange mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="image">image</span> Visual Assets
+                    </h2>
+<div class="space-y-6">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Welcome Avatar</label>
+<div class="border-2 border-dashed border-outline-variant/30 rounded-xl p-4 text-center hover:border-brand-orange/50 transition-colors cursor-pointer group">
+<img class="w-24 h-24 rounded-full mx-auto mb-3 object-cover border-2 border-brand-orange group-hover:scale-105 transition-transform" data-alt="AI Sales Executive Avatar" src="https://lh3.googleusercontent.com/aida/AEtjO1XKM00pFk5ti2fsQSIOsKpPkHYZIvKWsrxvxkLS3407ps9LXVqSd2b1-tjgbZvux4fFWJmYuCMhaYoXOaS19EpygB0t7v4IAcdUhOn4R6uzYJfKWZ7Fe-F_8bEqkxy6Mblu9C8jOEIKV7C0pKWvF-czKKxq13lVmouXi8RKyiBRHOxXN7GBv6AjjYD93ewt8hBQMG2tSM8Nwbu19B2sKy9w7PoZ71ss5iAbokmfYFqVjR0tTsId_cotnGM"/>
+<span class="font-body-sm text-body-sm text-brand-orange">Change Image</span>
+</div>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Case Study / Preview</label>
+<div class="border-2 border-dashed border-outline-variant/30 rounded-xl p-4 flex flex-col items-center justify-center gap-4 hover:border-brand-orange/50 transition-colors cursor-pointer group">
+<img class="w-full rounded-lg object-cover" data-alt="Case Study" src="https://lh3.googleusercontent.com/aida/AEtjO1WPrP97apeSSyUaoyGuz4t52eBIQ2hOfKBSt0nSS5txzHsTbPhJ6T7spAayqwaMA_KEEUUs6NliVwSmHvUmSuBQN9ipAge_JLBnBQQuCE0FWhmwVE-f2A-YsILMK8grO2zxQHtV9hvacFM5rqJ-nU8JnP2ncI16RueVf4kFUu6-wUsMPjzdTv9DwTgxgVPivFNJVWP67E1jK-v81mk8OC1Qnpey3jFtSifDNbUVhkIB1jUegqDma9T8PQ"/>
+<span class="font-body-sm text-body-sm text-brand-orange mt-2">Update Asset</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Save Action -->
+<div class="glass-panel p-6 rounded-xl flex flex-col gap-4">
+<button class="w-full bg-brand-orange text-white font-title-md text-title-md py-3 rounded-lg hover:scale-[1.02] transition-transform ai-glow">Save &amp; Deploy</button>
+<button class="w-full border border-outline-variant/30 text-on-surface hover:bg-surface-container-low font-title-md text-title-md py-3 rounded-lg transition-colors">
+                        Preview Executive
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<script>
+        // Simple toggle logic for the custom switches
+        document.querySelectorAll('.toggle-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                if(this.checked) {
+                    this.classList.remove('translate-x-0', 'border-outline');
+                    this.classList.add('translate-x-6', 'border-brand-orange');
+                    this.nextElementSibling.classList.remove('bg-surface-container-highest');
+                    this.nextElementSibling.classList.add('bg-brand-orange');
+                } else {
+                    this.classList.remove('translate-x-6', 'border-brand-orange');
+                    this.classList.add('translate-x-0', 'border-outline');
+                    this.nextElementSibling.classList.remove('bg-brand-orange');
+                    this.nextElementSibling.classList.add('bg-surface-container-highest');
+                }
+            });
+        });
+    </script>
+</body></html>
