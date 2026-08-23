@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Configure AI Executive - Layboka AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-background": "#e0e3e5",
+                        "on-primary-fixed-variant": "#0035be",
+                        "surface-container-lowest": "#0b0f10",
+                        "inverse-primary": "#124af0",
+                        "secondary-container": "#3f465c",
+                        "primary-container": "#2e5bff",
+                        "on-primary-container": "#efefff",
+                        "surface-container-high": "#272a2c",
+                        "on-surface-variant": "#c4c5d9",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#363a3b",
+                        "inverse-on-surface": "#2d3133",
+                        "on-primary": "#002388",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "vip-gold": "#F59E0B",
+                        "on-surface": "#e0e3e5",
+                        "on-error": "#690005",
+                        "primary-fixed": "#dde1ff",
+                        "surface-container": "#1d2022",
+                        "on-tertiary-fixed": "#002022",
+                        "inverse-surface": "#e0e3e5",
+                        "surface-tint": "#b8c3ff",
+                        "tertiary-fixed-dim": "#00dbe9",
+                        "surface-variant": "#323537",
+                        "outline": "#8e90a2",
+                        "on-tertiary-fixed-variant": "#004f54",
+                        "primary-fixed-dim": "#b8c3ff",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "surface-glass": "rgba(30, 27, 75, 0.8)",
+                        "tertiary": "#00dbe9",
+                        "secondary-fixed": "#dae2fd",
+                        "status-offline": "#64748B",
+                        "on-tertiary-container": "#c4faff",
+                        "primary": "#b8c3ff",
+                        "on-secondary": "#283044",
+                        "on-tertiary": "#00363a",
+                        "on-secondary-fixed": "#131b2e",
+                        "surface-container-low": "#191c1e",
+                        "surface-container-highest": "#323537",
+                        "surface-dim": "#101415",
+                        "status-online": "#10B981",
+                        "tertiary-container": "#007981",
+                        "on-primary-fixed": "#001356",
+                        "secondary": "#bec6e0",
+                        "tertiary-fixed": "#7df4ff",
+                        "on-secondary-container": "#adb4ce",
+                        "surface": "#101415",
+                        "error": "#ffb4ab",
+                        "deep-indigo": "#1E1B4B",
+                        "error-container": "#93000a",
+                        "background": "#101415",
+                        "outline-variant": "#434656"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "gutter": "24px"
+                    },
+                    fontFamily: {
+                        "body-lg": ["Inter", "sans-serif"],
+                        "display-lg": ["Hanken Grotesk", "sans-serif"],
+                        "title-md": ["Hanken Grotesk", "sans-serif"],
+                        "headline-lg": ["Hanken Grotesk", "sans-serif"],
+                        "headline-lg-mobile": ["Hanken Grotesk", "sans-serif"],
+                        "body-sm": ["Inter", "sans-serif"],
+                        "data-mono": ["JetBrains Mono", "monospace"],
+                        "label-caps": ["JetBrains Mono", "monospace"]
+                    },
+                    fontSize: {
+                        "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "display-lg": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "title-md": ["20px", { lineHeight: "28px", fontWeight: "500" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "600" }],
+                        "headline-lg-mobile": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+                        "data-mono": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+                        "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&amp;family=Inter:wght@400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        .form-input {
+            @apply w-full bg-surface-container border border-outline-variant/30 rounded-lg px-4 py-3 text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors duration-200;
+        }
+        .form-label {
+            @apply block font-label-caps text-label-caps text-on-surface-variant mb-2;
+        }
+        .toggle-checkbox:checked {
+            @apply right-0 border-primary bg-primary;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            @apply bg-primary-container;
+        }
+        .card-section {
+            @apply bg-surface-container-low border border-outline-variant/10 rounded-xl p-5 mb-6;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col font-body-lg text-body-lg selection:bg-primary-container selection:text-on-primary-container pb-[88px] md:pb-0">
+<!-- Top Navigation (Mobile App Bar) -->
+<header class="bg-surface-glass dark:bg-surface-glass backdrop-blur-xl border-b border-outline-variant/10 shadow-sm docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 w-full max-w-container-max mx-auto">
+<button class="text-on-surface-variant hover:text-on-surface transition-colors p-2 -ml-2 rounded-full md:hidden">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg font-bold text-primary dark:text-primary mx-auto md:mx-0">
+                Configure AI Executive
+            </div>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors p-2 -mr-2 rounded-full md:hidden">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+<div class="hidden md:flex gap-6 items-center">
+<!-- Standard top nav links for desktop omitted for focused view -->
+</div>
+</div>
+</header>
+<main class="flex-grow w-full max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop py-6 md:py-8 flex flex-col gap-6">
+<!-- Identity & Persona -->
+<section class="card-section">
+<div class="flex items-center gap-3 mb-6">
+<div class="bg-deep-indigo p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">person</span>
+</div>
+<h2 class="font-title-md text-title-md text-on-surface font-semibold">Identity &amp; Persona</h2>
+</div>
+<div class="space-y-5">
+<div>
+<label class="form-label" for="execName">Executive Name</label>
+<input class="form-input font-body-lg text-body-lg" id="execName" placeholder="e.g., Sarah, James" type="text" value="Alex Vance"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="form-label" for="region">Region Focus</label>
+<select class="form-input font-body-lg text-body-lg appearance-none bg-no-repeat bg-right pr-10" id="region" style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23c4c5d9%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E'); background-position: right 0.75rem center; background-size: 16px 12px;">
+<option>North America</option>
+<option>EMEA</option>
+<option>APAC</option>
+<option>Global</option>
+</select>
+</div>
+<div>
+<label class="form-label" for="gender">Voice Type</label>
+<select class="form-input font-body-lg text-body-lg appearance-none bg-no-repeat bg-right pr-10" id="gender" style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23c4c5d9%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E'); background-position: right 0.75rem center; background-size: 16px 12px;">
+<option>Neutral / Professional</option>
+<option>Warm / Empathetic</option>
+<option>Assertive / Direct</option>
+</select>
+</div>
+</div>
+<div>
+<label class="form-label">Personality Matrix</label>
+<div class="bg-surface-container rounded-lg p-4 border border-outline-variant/20 space-y-4">
+<div class="flex flex-col gap-2">
+<div class="flex justify-between text-body-sm text-on-surface-variant">
+<span>Analytical</span>
+<span>Persuasive</span>
+</div>
+<input class="w-full h-1 bg-outline-variant/30 rounded-lg appearance-none cursor-pointer accent-primary" max="100" min="0" type="range" value="65"/>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between text-body-sm text-on-surface-variant">
+<span>Formal</span>
+<span>Conversational</span>
+</div>
+<input class="w-full h-1 bg-outline-variant/30 rounded-lg appearance-none cursor-pointer accent-primary" max="100" min="0" type="range" value="40"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Visual Assets -->
+<section class="card-section">
+<div class="flex items-center gap-3 mb-6">
+<div class="bg-deep-indigo p-2 rounded-lg text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</div>
+<h2 class="font-title-md text-title-md text-on-surface font-semibold">Visual Assets</h2>
+</div>
+<div class="flex flex-col items-center justify-center p-6 border-2 border-dashed border-outline-variant/40 rounded-xl bg-surface-container hover:border-primary/50 transition-colors cursor-pointer group">
+<div class="relative w-24 h-24 mb-4 rounded-full overflow-hidden border-2 border-surface-variant group-hover:border-primary transition-colors">
+<img alt="Executive Avatar" class="object-cover w-full h-full" data-alt="A highly detailed, professional corporate headshot avatar of a confident AI sales executive. Deep indigo background with electric blue ambient rim lighting. The subject has a modern, high-tech yet approachable corporate aesthetic. Shot in 8k resolution, crisp focus, photorealistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZeOk7hxs8XvMpESg29SvVG_rJKIEP3nBcA5hleU1os_LpsrPidKa2Z2irwnM4KCioWkpd5Aw4D_OMVpI8n_LszTM19R-ofrtRPT6yQN2c--N_tbFNu2xr9HXQrq0irIZfUEtxRDzh5sy0y3OjspQoMRjlbXP_4mer8M4WAjCcLI2glrmZzassnC1sdA3NZh4J2PE-hztqJ6t-CwVbtx23NYm8v5r7F05YHYAOH7XMcoOMvIA8Nrf-"/>
+<div class="absolute inset-0 bg-background/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-surface">upload</span>
+</div>
+</div>
+<div class="text-center">
+<p class="font-body-lg text-body-lg text-primary mb-1">Tap to upload avatar</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">PNG, JPG or WebP (Max 2MB)</p>
+</div>
+</div>
+</section>
+<!-- Active Sales Logic -->
+<section class="card-section">
+<div class="flex items-center gap-3 mb-6">
+<div class="bg-deep-indigo p-2 rounded-lg text-secondary">
+<span class="material-symbols-outlined">settings_suggest</span>
+</div>
+<h2 class="font-title-md text-title-md text-on-surface font-semibold">Active Sales Logic</h2>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-surface-container rounded-lg border border-outline-variant/20">
+<div class="flex-1 pr-4">
+<p class="font-body-lg text-body-lg text-on-surface font-medium">Proactive Engagement</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">AI initiates contact when high-intent signals are detected.</p>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-outline-variant/30 right-0 top-0 checked:bg-primary checked:border-primary transition-all duration-300" id="toggle1" name="toggle1" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant/30 cursor-pointer bg-primary-container transition-colors duration-300" for="toggle1"></label>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container rounded-lg border border-outline-variant/20">
+<div class="flex-1 pr-4">
+<p class="font-body-lg text-body-lg text-on-surface font-medium">Auto-Discounting Logic</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Allow AI to offer up to 15% discount to close VIP leads.</p>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-outline-variant/30 left-0 top-0 transition-all duration-300" id="toggle2" name="toggle2" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant/30 cursor-pointer transition-colors duration-300" for="toggle2"></label>
+</div>
+</div>
+</div>
+</section>
+<!-- Behavioral Training -->
+<section class="card-section">
+<div class="flex items-center gap-3 mb-6">
+<div class="bg-deep-indigo p-2 rounded-lg text-tertiary">
+<span class="material-symbols-outlined">palette</span>
+</div>
+<h2 class="font-title-md text-title-md text-on-surface font-semibold">UI Customization</h2>
+</div>
+<div class="space-y-5">
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="form-label" for="cornerRoundness">Corner Roundness (px)</label>
+<input class="form-input font-body-lg text-body-lg" id="cornerRoundness" placeholder="8" type="number" value="8"/>
+</div>
+<div>
+<label class="form-label" for="titleBarHeight">Title Bar Height (px)</label>
+<input class="form-input font-body-lg text-body-lg" id="titleBarHeight" placeholder="56" type="number" value="56"/>
+</div>
+</div>
+<div>
+<label class="form-label" for="titleBarText">Title Bar Text</label>
+<input class="form-input font-body-lg text-body-lg" id="titleBarText" placeholder="Enter title..." type="text" value="Configure AI Executive"/>
+</div>
+<div>
+<label class="form-label" for="titleBarColor">Title Bar Background Color</label>
+<div class="flex gap-3 items-center">
+<input class="h-12 w-24 bg-surface-container border border-outline-variant/30 rounded-lg cursor-pointer appearance-none" id="titleBarColor" type="color" value="#101415"/>
+<span class="text-body-sm text-on-surface-variant font-data-mono">#101415</span>
+</div>
+</div>
+</div>
+</section><section class="card-section">
+<div class="flex items-center gap-3 mb-6">
+<div class="bg-deep-indigo p-2 rounded-lg text-status-online">
+<span class="material-symbols-outlined">model_training</span>
+</div>
+<h2 class="font-title-md text-title-md text-on-surface font-semibold">Behavioral Training</h2>
+</div>
+<div>
+<label class="form-label" for="instructions">Custom System Instructions</label>
+<textarea class="form-input font-body-lg text-body-lg resize-none" id="instructions" placeholder="Provide specific instructions on how the AI should handle objections, competitors, or specific product lines..." rows="4"></textarea>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 text-right">0/500 chars</p>
+</div>
+</section>
+</main>
+<!-- Bottom Sticky Action Bar (Mobile) -->
+<div class="fixed bottom-0 left-0 right-0 bg-surface-glass backdrop-blur-xl border-t border-outline-variant/10 p-4 md:hidden z-50 flex gap-3 shadow-lg pb-safe">
+<button class="flex-1 bg-surface-container-high text-on-surface border border-outline-variant/30 font-body-lg text-body-lg font-medium rounded-lg py-3 hover:bg-surface-variant transition-colors">
+            Preview
+        </button>
+<button class="flex-[2] bg-inverse-primary text-white font-body-lg text-body-lg font-medium rounded-lg py-3 hover:opacity-90 transition-all active:scale-[0.98] shadow-[0_0_15px_rgba(46,91,255,0.3)]">
+            Save Configuration
+        </button>
+</div>
+<!-- Padding for bottom safe area on mobile devices -->
+<style>
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom, 1rem);
+        }
+    </style>
+</body></html>
