@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Layboka AI - Customize Chatbot</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&amp;family=Inter:wght@400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#141718",
+                        "secondary-fixed": "#6ffbbe",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-background": "#e2e2e3",
+                        "on-surface-variant": "#e4bfb1",
+                        "outline": "#ab8a7d",
+                        "on-secondary": "#003824",
+                        "error-container": "#93000a",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#38393a",
+                        "on-secondary-container": "#00311f",
+                        "tertiary-fixed-dim": "#00dce5",
+                        "inverse-primary": "#a63b00",
+                        "on-secondary-fixed-variant": "#005236",
+                        "primary-fixed-dim": "#ffb599",
+                        "surface-tint": "#ffb599",
+                        "primary-fixed": "#ffdbce",
+                        "tertiary": "#00dce5",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#002113",
+                        "tertiary-fixed": "#63f7ff",
+                        "surface-dim": "#121415",
+                        "success-green": "#10B981",
+                        "on-tertiary": "#003739",
+                        "on-tertiary-container": "#003235",
+                        "primary-container": "#ff5f00",
+                        "secondary": "#4edea3",
+                        "primary": "#ffb599",
+                        "on-primary-container": "#531a00",
+                        "on-primary-fixed-variant": "#7f2b00",
+                        "secondary-container": "#00a572",
+                        "on-tertiary-fixed": "#002021",
+                        "inverse-surface": "#e2e2e3",
+                        "brand-orange": "#FF5F00",
+                        "tertiary-container": "#00a4ab",
+                        "outline-variant": "#5b4137",
+                        "ai-glow": "#00F5FF",
+                        "inverse-on-surface": "#2f3132",
+                        "surface-container-high": "#282a2b",
+                        "background": "#121415",
+                        "surface-variant": "#333536",
+                        "on-primary-fixed": "#370e00",
+                        "surface-container-lowest": "#0c0e0f",
+                        "error": "#ffb4ab",
+                        "surface-container-highest": "#333536",
+                        "on-tertiary-fixed-variant": "#004f53",
+                        "surface-near-black": "#0A0C0D",
+                        "on-primary": "#5a1c00",
+                        "surface-container-low": "#1a1c1d",
+                        "surface": "#121415",
+                        "on-surface": "#e2e2e3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "title-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "data-mono": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-sm": ["Inter"],
+                        "label-caps": ["JetBrains Mono"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "data-mono": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #0A0C0D; color: #e2e2e3; }
+        .glass-panel {
+            background: rgba(20, 23, 24, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-active {
+            box-shadow: 0 0 12px rgba(255, 95, 0, 0.2);
+        }
+        /* Hide scrollbar for clean mobile view */
+        ::-webkit-scrollbar { display: none; }
+        * { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-near-black flex flex-col min-h-screen relative font-body-sm pb-16">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface w-full top-0 sticky border-b border-outline-variant/20 z-50 flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop w-full">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-brand-orange flex items-center justify-center">
+<span class="material-symbols-outlined text-black" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<span class="text-title-md font-headline-lg-mobile text-brand-orange">Layboka AI</span>
+</div>
+<div class="flex items-center gap-4 hidden md:flex">
+<!-- Top Nav Items Hidden on Mobile -->
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-brand-orange transition-colors duration-200 cursor-pointer active:opacity-80">account_balance_wallet</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-brand-orange transition-colors duration-200 cursor-pointer active:opacity-80">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-brand-orange transition-colors duration-200 cursor-pointer active:opacity-80">settings</span>
+<img alt="Merchant Profile Avatar" class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="A small, stylized profile avatar of a tech merchant. The avatar features a sleek, high-contrast design with dark backgrounds and subtle neon orange accents, fitting a modern AI dashboard aesthetic. The lighting is dramatic and moody, emphasizing a professional yet futuristic vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmxuDmHMtEZfXQFer253LgU9BEcjt7NdX1uK3x18bViLKzOW7MbJaGqD5MoEzcnEuaflluONCqoKBi2po6UCI2odQme6ZPwLtvXxmttTnTnzgkvMl8oII-4t_9mu-5ukBxFvxC5KIWroteatgxzkp6eR6EKZ2JE8m_yxVSgxDPuE-XActlNmVqUdw2mnOWfeGy7jNg4Rxc4pvTu0mFzJMP7PmwWRIbWWMvS3YEAcaTws9RfOlI1k1c"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col p-margin-mobile gap-6 mb-20 max-w-container-max mx-auto w-full">
+<!-- Header Section -->
+<div class="flex flex-col gap-2 pt-2">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Customize Chatbot</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Configure identity, style, and automation logic for your primary agent.</p>
+</div>
+<!-- Identity Settings Card (Glassmorphic) -->
+<div class="glass-panel rounded-lg p-base-2 w-full flex flex-col gap-4">
+<div class="flex items-center justify-between border-b border-outline-variant/20 pb-3">
+<div class="flex items-center gap-3">
+<div class="p-2 rounded bg-surface-variant text-brand-orange">
+<span class="material-symbols-outlined">badge</span>
+</div>
+<h2 class="font-title-md text-title-md text-on-surface">Identity</h2>
+</div>
+</div>
+<div class="flex flex-col gap-4 pt-1">
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant">Bot Name</label>
+<input class="bg-surface-dim border border-outline-variant/30 rounded focus:border-brand-orange focus:ring-1 focus:ring-brand-orange text-on-surface font-body-sm p-3 w-full glow-active transition-all outline-none" type="text" value="Support Nexus"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant">Greeting Message</label>
+<textarea class="bg-surface-dim border border-outline-variant/30 rounded focus:border-brand-orange focus:ring-1 focus:ring-brand-orange text-on-surface font-body-sm p-3 w-full glow-active transition-all outline-none resize-none" rows="2">Hello! I am Support Nexus. How can I assist you with your order today?</textarea>
+</div>
+<div class="flex items-center gap-4 mt-2">
+<img class="w-12 h-12 rounded-full border-2 border-brand-orange object-cover" data-alt="A sleek, high-tech circular avatar icon representing an AI chatbot. The design features a minimalistic robotic face or abstract neural network node in vibrant neon orange against a deep void black background. The style is sharp, precise, and engineered, fitting a dominant AI brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALECiO6JfPQ8qjX23VQuA2DDejmx9ISYbAujGY1QIpzTtXMes89ayESHWlJuIuQ03vzMfCYYRzXy8_xXJxBRZJ5S7W6Ux-Jfrmwpv1fITqgnCROUlL9HXHy_DMQrXu9Q8nMyup4RlhGsjWmkWQiQmFUBKxGoD6LR4ProjYQRqyDnLAPUCFcn-C19tMX6gCms6rsan89T8ra0EGLiO4H0b2E_CzyYIMWYhWe70fsIbjjbcnPCa4GzBA"/>
+<button class="bg-surface-variant text-brand-orange font-label-caps text-label-caps px-4 py-2 rounded hover:bg-surface-bright transition-colors border border-outline-variant/20">Change Avatar</button>
+</div>
+</div>
+</div>
+<!-- Theme Settings Card -->
+<div class="glass-panel rounded-lg p-base-2 w-full flex flex-col gap-4">
+<div class="flex items-center justify-between border-b border-outline-variant/20 pb-3">
+<div class="flex items-center gap-3">
+<div class="p-2 rounded bg-surface-variant text-secondary">
+<span class="material-symbols-outlined">palette</span>
+</div>
+<h2 class="font-title-md text-title-md text-on-surface">Theme</h2>
+</div>
+</div>
+<div class="flex flex-col gap-4 pt-1">
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant">Primary Color</label>
+<div class="flex gap-3">
+<div class="w-8 h-8 rounded-full bg-brand-orange border-2 border-on-surface cursor-pointer ring-2 ring-brand-orange ring-offset-2 ring-offset-surface-near-black"></div>
+<div class="w-8 h-8 rounded-full bg-success-green border border-outline-variant/30 cursor-pointer"></div>
+<div class="w-8 h-8 rounded-full bg-tertiary border border-outline-variant/30 cursor-pointer"></div>
+<div class="w-8 h-8 rounded-full bg-surface-bright border border-outline-variant/30 cursor-pointer"></div>
+</div>
+</div>
+<div class="flex items-center justify-between bg-surface-dim p-3 rounded border border-outline-variant/20">
+<span class="font-body-sm text-on-surface">Dark Mode Enforced</span>
+<div class="w-10 h-6 bg-brand-orange rounded-full relative cursor-pointer">
+<div class="w-4 h-4 bg-black rounded-full absolute right-1 top-1"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Action Button for Preview -->
+<div class="fixed bottom-24 right-margin-mobile z-40">
+<button class="bg-brand-orange text-black rounded-full w-14 h-14 flex items-center justify-center shadow-[0_0_15px_rgba(255,95,0,0.4)] hover:scale-105 transition-transform active:scale-95" onclick="document.getElementById('preview-overlay').classList.remove('hidden')">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-surface-container-high dark:bg-surface-container-high fixed bottom-0 w-full z-50 lg:hidden border-t border-outline-variant/20 shadow-[0_-4px_12px_rgba(0,0,0,0.5)] flex justify-around items-center h-16 w-full">
+<!-- Home -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant scale-95 transition-transform duration-150 active:bg-surface-container-highest w-full h-full cursor-pointer">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-caps text-label-caps mt-1">Home</span>
+</div>
+<!-- Plans -->
+<div class="flex flex-col items-center justify-center text-brand-orange scale-95 transition-transform duration-150 active:bg-surface-container-highest w-full h-full cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-caps text-label-caps mt-1">Plans</span>
+</div>
+<!-- Orders -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant scale-95 transition-transform duration-150 active:bg-surface-container-highest w-full h-full cursor-pointer">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-label-caps text-label-caps mt-1">Orders</span>
+</div>
+<!-- Profile -->
+<div class="flex flex-col items-center justify-center text-on-surface-variant scale-95 transition-transform duration-150 active:bg-surface-container-highest w-full h-full cursor-pointer">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-caps text-label-caps mt-1">Profile</span>
+</div>
+</nav>
+<!-- Full Screen Preview Overlay (Hidden by default) -->
+<div class="hidden fixed inset-0 bg-surface-near-black z-[100] flex flex-col" id="preview-overlay">
+<div class="flex items-center justify-between p-4 bg-surface-container border-b border-outline-variant/20">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-success-green animate-pulse"></div>
+<span class="font-title-md text-title-md text-on-surface">Preview Mode</span>
+</div>
+<button class="text-on-surface-variant hover:text-brand-orange p-2" onclick="document.getElementById('preview-overlay').classList.add('hidden')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex-grow p-4 flex flex-col justify-end gap-4 bg-surface-dim" style="background-image: radial-gradient(circle at center, rgba(255,95,0,0.05) 0%, transparent 70%);">
+<!-- Mock Chat -->
+<div class="flex flex-col gap-4">
+<div class="self-start bg-surface-bright border-l-2 border-brand-orange rounded-r-lg rounded-tl-lg p-3 max-w-[80%]">
+<p class="font-body-sm text-on-surface">Hello! I am Support Nexus. How can I assist you with your order today?</p>
+</div>
+<div class="self-end bg-brand-orange text-black rounded-l-lg rounded-tr-lg p-3 max-w-[80%] shadow-[0_0_8px_rgba(255,95,0,0.3)]">
+<p class="font-body-sm">I need to check the status of order #9928.</p>
+</div>
+<div class="self-start flex gap-2 items-center">
+<div class="w-2 h-2 rounded-full bg-brand-orange animate-bounce"></div>
+<div class="w-2 h-2 rounded-full bg-brand-orange animate-bounce" style="animation-delay: 0.1s"></div>
+<div class="w-2 h-2 rounded-full bg-brand-orange animate-bounce" style="animation-delay: 0.2s"></div>
+</div>
+</div>
+<div class="mt-4 bg-surface-container rounded-full flex items-center p-2 border border-outline-variant/30">
+<input class="bg-transparent border-none text-on-surface font-body-sm flex-grow outline-none px-3 placeholder-on-surface-variant/50" placeholder="Type a message..." type="text"/>
+<button class="w-8 h-8 rounded-full bg-brand-orange flex items-center justify-center text-black">
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>
