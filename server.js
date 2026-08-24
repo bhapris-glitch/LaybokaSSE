@@ -1,4 +1,4 @@
-/*<html><head></head><body>/**
+<html><head></head><body>/**
  * server.js
  * Layboka AI | Production SaaS Entry Point
  * Handles routing for Landing, Dashboard, Admin, and Enterprise views.
@@ -7,21 +7,9 @@
 
 const express = require('express');
 const path = require('path');
-const helmet = require('helmet');
-const cors = require('cors');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const app = express();
 const PORT = process.env.PORT || 3000;
-
-// Security Middleware (complements security.js frontend logic)
-app.use(helmet({
-    contentSecurityPolicy: false, // Disabled for inline scripts/styles in dev, configure for prod
-    crossOriginEmbedderPolicy: false
-}));
-app.use(cors({
-    origin: process.env.NODE_ENV === 'production' ? 'https://layboka.ai' : '*',
-    methods: ['GET', 'POST']
-}));
 
 // Webhook middleware needs raw body, must be before express.json()
 app.post('/api/webhooks/stripe', express.raw({type: 'application/json'}), async (req, res) =&gt; {
@@ -51,11 +39,6 @@ app.post('/api/webhooks/stripe', express.raw({type: 'application/json'}), async 
             // Handle failed payment (e.g., notify user)
             console.log('Invoice payment failed:', invoiceFailed.id);
             break;
-        case 'customer.subscription.deleted':
-            const subscriptionDeleted = event.data.object;
-            // Handle subscription cancellation
-            console.log('Subscription deleted:', subscriptionDeleted.id);
-            break;
         default:
             console.log(`Unhandled event type ${event.type}`);
     }
@@ -73,29 +56,11 @@ app.use(express.static(path.join(__dirname, 'public')));
  */
 const detectDevice = (req, res, next) =&gt; {
     const ua = req.headers['user-agent'] || '';
-    req.isMobile = /mobile|android|iphone|ipad|phone/i.test(ua);
+    req.isMobile = /mobile/i.test(ua);
     next();
 };
 
 app.use(detectDevice);
-
-/**
- * 5-Day Trial Logic Middleware (Mock implementation)
- * In production, this would check the database for the user's trial start date.
- */
-const checkTrialStatus = (req, res, next) =&gt; {
-    // Mock user state - ideally fetched from session/DB
-    const isTrialExpired = false; // Set to true to test lock screen
-    const isSubscribed = false;
-    
-    // Allow access if subscribed or trial is active
-    if (isSubscribed || !isTrialExpired) {
-        return next();
-    }
-    
-    // Redirect to lock screen if trial expired and not subscribed
-    res.redirect('/system/trial-lock');
-};
 
 // =====================================
 // PUBLIC ROUTES (Landing &amp; Pricing)
@@ -118,9 +83,6 @@ app.get('/pricing', (req, res) =&gt; {
 // =====================================
 // MERCHANT DASHBOARD ROUTES
 // =====================================
-// Note: Using checkTrialStatus middleware to protect dashboard routes
-
-app.use('/dashboard', checkTrialStatus);
 
 app.get('/dashboard', (req, res) =&gt; {
     if (req.isMobile) {
@@ -181,9 +143,9 @@ app.get('/billing/invoice', (req, res) =&gt; {
 
 app.post('/api/checkout/create-session', async (req, res) =&gt; {
     try {
-        const { priceId, customerId } = req.body;
+        const { priceId } = req.body;
         
-        const sessionParams = {
+        const session = await stripe.checkout.sessions.create({
             payment_method_types: ['card'],
             line_items: [
                 {
@@ -192,34 +154,8 @@ app.post('/api/checkout/create-session', async (req, res) =&gt; {
                 },
             ],
             mode: 'subscription',
-            success_url: `${req.protocol}://${req.get('host')}/payment-success.html?session_id={CHECKOUT_SESSION_ID}`,
+            success_url: `${req.protocol}://${req.get('host')}/payment-success.html`,
             cancel_url: `${req.protocol}://${req.get('host')}/pricing`,
-            allow_promotion_codes: true,
-            billing_address_collection: 'required'
-        };
-
-        if (customerId) {
-            sessionParams.customer = customerId;
-        } else {
-            sessionParams.customer_email = req.body.email; // Fallback if no existing customer
-        }
-
-        const session = await stripe.checkout.sessions.create(sessionParams);
-
-        res.json({ url: session.url });
-    } catch (error) {
-        console.error("Stripe Checkout Error:", error);
-        res.status(500).json({ error: error.message });
-    }
-});
-
-app.post('/api/billing/portal', async (req, res) =&gt; {
-    try {
-        const { customerId } = req.body;
-        
-        const session = await stripe.billingPortal.sessions.create({
-            customer: customerId,
-            return_url: `${req.protocol}://${req.get('host')}/dashboard`,
         });
 
         res.json({ url: session.url });
@@ -264,48 +200,22 @@ app.post('/api/chat/executive', (req, res) =&gt; {
         executive: {
             name: "Emily",
             personality: "friendly",
-            plan: "growth",
-            knowledgeBaseId: "kb_12345"
+            plan: "growth"
         }
     });
 });
 
 app.post('/api/chat/message', (req, res) =&gt; {
-    const { message } = req.body;
-    
     // Core AI Response Logic placeholder
-    let reply = "Hello! I'm your Layboka AI assistant. How can I help you today?";
-    let products = [];
-    
-    // Simple mock logic for demonstration
-    if (message &amp;&amp; message.toLowerCase().includes('shoes')) {
-        reply = "We have some great shoes in stock right now! Here are a few options.";
-        products = [
-            { id: 1, name: "Running Sneakers", price: "$89.99", url: "#" },
-            { id: 2, name: "Casual Loafers", price: "$65.00", url: "#" }
-        ];
-    }
-    
     res.json({
         success: true,
-        reply: reply,
-        products: products
-    });
-});
-
-app.post('/api/chat/recommendations', (req, res) =&gt; {
-    res.json({
-        success: true,
-        recommendations: [
-            "What are your best sellers?",
-            "Do you offer free shipping?",
-            "Where is my order?"
-        ]
+        reply: "Hello! I'm your Layboka AI assistant. How can I help you today?",
+        products: []
     });
 });
 
 app.post('/api/recovery/dashboard', (req, res) =&gt; {
-    res.json({ success: true, message: "Analytics synced successfully. Dashboard recovered." });
+    res.json({ success: true, message: "Analytics synced." });
 });
 
 // =====================================
@@ -318,5 +228,4 @@ app.get('*', (req, res) =&gt; {
 
 app.listen(PORT, () =&gt; {
     console.log(`Layboka AI Production Server running on port ${PORT}`);
-    console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
 });</body></html>
