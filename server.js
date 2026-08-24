@@ -1,5 +1,5 @@
-<html><head></head><body>/**
- * server.js
+//<html><head></head><body>/**
+ /* server.js
  * Layboka AI | Production SaaS Entry Point
  * Handles routing for Landing, Dashboard, Admin, and Enterprise views.
  * Optimized for Railway.app deployment with device-aware routing.
