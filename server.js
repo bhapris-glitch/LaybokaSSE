@@ -1,18 +1,26 @@
-//<html><head></head><body>/**
- /* server.js
- * Layboka AI | Production SaaS Entry Point
- * Handles routing for Landing, Dashboard, Admin, and Enterprise views.
- * Optimized for Railway.app deployment with device-aware routing.
+/**
+ * server.js
+ * Layboka AI | Final Production SaaS Entry Point
+ * Optimized for Railway.app with dynamic device routing and Stripe integration.
  */
 
 const express = require('express');
 const path = require('path');
+const cors = require('cors');
+const helmet = require('helmet');
+const compression = require('compression');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+require('dotenv').config();
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// =====================================
+// MIDDLEWARE
+// =====================================
+
 // Webhook middleware needs raw body, must be before express.json()
-app.post('/api/webhooks/stripe', express.raw({type: 'application/json'}), async (req, res) =&gt; {
+app.post('/api/webhooks/stripe', express.raw({type: 'application/json'}), async (req, res) => {
     const sig = req.headers['stripe-signature'];
     let event;
 
@@ -22,7 +30,7 @@ app.post('/api/webhooks/stripe', express.raw({type: 'application/json'}), async 
         return res.status(400).send(`Webhook Error: ${err.message}`);
     }
 
-    // Handle the event
+    // Handle the event switch
     switch (event.type) {
         case 'checkout.session.completed':
             const session = event.data.object;
@@ -46,15 +54,18 @@ app.post('/api/webhooks/stripe', express.raw({type: 'application/json'}), async 
     res.json({received: true});
 });
 
-// Middleware
+app.use(helmet({
+    contentSecurityPolicy: false,
+}));
+app.use(compression());
+app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 /**
  * Device Detection Middleware
- * Simple check to serve mobile vs desktop views where applicable.
  */
-const detectDevice = (req, res, next) =&gt; {
+const detectDevice = (req, res, next) => {
     const ua = req.headers['user-agent'] || '';
     req.isMobile = /mobile/i.test(ua);
     next();
@@ -63,101 +74,90 @@ const detectDevice = (req, res, next) =&gt; {
 app.use(detectDevice);
 
 // =====================================
-// PUBLIC ROUTES (Landing &amp; Pricing)
+// PUBLIC ROUTES (Landing & Corporate)
 // =====================================
 
-app.get('/', (req, res) =&gt; {
+app.get('/', (req, res) => {
     if (req.isMobile) {
         return res.sendFile(path.join(__dirname, 'public/mobile.html'));
     }
-    res.sendFile(path.join(__dirname, 'src/views/landing/index.html'));
+    res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
-app.get('/pricing', (req, res) =&gt; {
+app.get('/pricing', (req, res) => {
     if (req.isMobile) {
         return res.sendFile(path.join(__dirname, 'src/views/billing/pricing-mobile.html'));
     }
     res.sendFile(path.join(__dirname, 'src/views/billing/pricing.html'));
 });
 
+app.get('/about', (req, res) => {
+    const file = req.isMobile ? 'about-mobile.html' : 'about.html';
+    res.sendFile(path.join(__dirname, `src/views/landing/${file}`));
+});
+
+app.get('/contact', (req, res) => {
+    const file = req.isMobile ? 'contact-mobile.html' : 'contact.html';
+    res.sendFile(path.join(__dirname, `src/views/landing/${file}`));
+});
+
 // =====================================
 // MERCHANT DASHBOARD ROUTES
 // =====================================
 
-app.get('/dashboard', (req, res) =&gt; {
-    if (req.isMobile) {
-        return res.sendFile(path.join(__dirname, 'src/views/merchant/dashboard/mobile-overview.html'));
-    }
-    res.sendFile(path.join(__dirname, 'src/views/merchant/dashboard/overview.html'));
+app.get('/dashboard', (req, res) => {
+    const file = req.isMobile ? 'mobile-overview.html' : 'overview.html';
+    res.sendFile(path.join(__dirname, `src/views/merchant/dashboard/${file}`));
 });
 
-app.get('/dashboard/analytics', (req, res) =&gt; {
-    if (req.isMobile) {
-        return res.sendFile(path.join(__dirname, 'src/views/merchant/dashboard/analytics-mobile.html'));
-    }
+app.get('/dashboard/analytics', (req, res) => {
     res.sendFile(path.join(__dirname, 'src/views/merchant/dashboard/analytics.html'));
 });
 
-app.get('/dashboard/config-ai', (req, res) =&gt; {
-    if (req.isMobile) {
-        return res.sendFile(path.join(__dirname, 'src/views/merchant/settings/config-ai-mobile.html'));
-    }
-    res.sendFile(path.join(__dirname, 'src/views/merchant/settings/config-ai.html'));
+app.get('/dashboard/config-ai', (req, res) => {
+    const file = req.isMobile ? 'config-ai-mobile.html' : 'config-ai.html';
+    res.sendFile(path.join(__dirname, `src/views/merchant/settings/${file}`));
 });
 
-app.get('/dashboard/webhooks', (req, res) =&gt; {
-    if (req.isMobile) {
-        return res.sendFile(path.join(__dirname, 'src/views/merchant/settings/webhooks-mobile.html'));
-    }
+app.get('/dashboard/webhooks', (req, res) => {
     res.sendFile(path.join(__dirname, 'src/views/merchant/settings/webhooks.html'));
 });
 
-app.get('/dashboard/api-docs', (req, res) =&gt; {
-    if (req.isMobile) {
-        return res.sendFile(path.join(__dirname, 'src/views/merchant/settings/api-docs-mobile.html'));
-    }
-    res.sendFile(path.join(__dirname, 'src/views/merchant/settings/api-docs.html'));
+app.get('/dashboard/whatsapp-recovery', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src/views/merchant/dashboard/whatsapp-recovery.html'));
 });
 
 // =====================================
-// BILLING &amp; RECHARGE ROUTES
+// BILLING & SYSTEM
 // =====================================
 
-app.get('/billing/recharge', (req, res) =&gt; {
-    if (req.isMobile) {
-        return res.sendFile(path.join(__dirname, 'src/views/merchant/billing/recharge-mobile.html'));
-    }
-    res.sendFile(path.join(__dirname, 'src/views/merchant/billing/recharge.html'));
-});
-
-app.get('/billing/invoice', (req, res) =&gt; {
-    if (req.isMobile) {
-        return res.sendFile(path.join(__dirname, 'src/views/merchant/billing/invoice-mobile.html'));
-    }
+app.get('/billing/invoice', (req, res) => {
     res.sendFile(path.join(__dirname, 'src/views/merchant/billing/invoice.html'));
+});
+
+app.get('/system/trial-lock', (req, res) => {
+    const file = req.isMobile ? 'trial-lock-mobile.html' : 'trial-lock.html';
+    res.sendFile(path.join(__dirname, `src/views/system/${file}`));
+});
+
+app.get('/system/pay-success', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src/views/system/pay-success.html'));
 });
 
 // =====================================
 // STRIPE CHECKOUT API
 // =====================================
 
-app.post('/api/checkout/create-session', async (req, res) =&gt; {
+app.post('/api/checkout/create-session', async (req, res) => {
     try {
         const { priceId } = req.body;
-        
         const session = await stripe.checkout.sessions.create({
             payment_method_types: ['card'],
-            line_items: [
-                {
-                    price: priceId,
-                    quantity: 1,
-                },
-            ],
+            line_items: [{ price: priceId, quantity: 1 }],
             mode: 'subscription',
-            success_url: `${req.protocol}://${req.get('host')}/payment-success.html`,
+            success_url: `${req.protocol}://${req.get('host')}/system/pay-success`,
             cancel_url: `${req.protocol}://${req.get('host')}/pricing`,
         });
-
         res.json({ url: session.url });
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -165,67 +165,54 @@ app.post('/api/checkout/create-session', async (req, res) =&gt; {
 });
 
 // =====================================
-// ENTERPRISE &amp; ADMIN ROUTES
+// ENTERPRISE & ADMIN ROUTES
 // =====================================
 
-app.get('/enterprise/fleet', (req, res) =&gt; {
-    if (req.isMobile) {
-        return res.sendFile(path.join(__dirname, 'src/views/enterprise/fleet-mobile.html'));
-    }
-    res.sendFile(path.join(__dirname, 'src/views/enterprise/fleet-command.html'));
+app.get('/enterprise/fleet', (req, res) => {
+    const file = req.isMobile ? 'fleet-mobile.html' : 'fleet-command.html';
+    res.sendFile(path.join(__dirname, `src/views/enterprise/${file}`));
 });
 
-app.get('/admin', (req, res) =&gt; {
+app.get('/admin', (req, res) => {
     res.sendFile(path.join(__dirname, 'src/views/admin/overview.html'));
 });
 
 // =====================================
-// SYSTEM &amp; LOCK SCREENS
+// CHATBOT API (Logic from chatbot.js)
 // =====================================
 
-app.get('/system/trial-lock', (req, res) =&gt; {
-    if (req.isMobile) {
-        return res.sendFile(path.join(__dirname, 'src/views/system/trial-lock-mobile.html'));
-    }
-    res.sendFile(path.join(__dirname, 'src/views/system/trial-lock.html'));
-});
-
-// =====================================
-// CHATBOT API (Integration with chatbot.js)
-// =====================================
-
-app.post('/api/chat/executive', (req, res) =&gt; {
+app.post('/api/chat/executive', (req, res) => {
     res.json({
         success: true,
         executive: {
-            name: "Emily",
-            personality: "friendly",
-            plan: "growth"
+            name: "Alex Vance",
+            personality: "professional",
+            plan: "premium",
+            online: true
         }
     });
 });
 
-app.post('/api/chat/message', (req, res) =&gt; {
-    // Core AI Response Logic placeholder
+app.post('/api/chat/message', (req, res) => {
     res.json({
         success: true,
-        reply: "Hello! I'm your Layboka AI assistant. How can I help you today?",
+        reply: "I've analyzed your requirements and recommend our high-performance suite.",
         products: []
     });
 });
 
-app.post('/api/recovery/dashboard', (req, res) =&gt; {
-    res.json({ success: true, message: "Analytics synced." });
+app.post('/api/recovery/dashboard', (req, res) => {
+    res.json({ success: true, message: "Recovery telemetry synced." });
 });
 
 // =====================================
-// 404 &amp; FALLBACK
+// 404 & FALLBACK
 // =====================================
 
-app.get('*', (req, res) =&gt; {
-    res.sendFile(path.join(__dirname, 'src/views/landing/index.html'));
+app.get('*', (req, res) => {
+    res.redirect('/');
 });
 
-app.listen(PORT, () =&gt; {
-    console.log(`Layboka AI Production Server running on port ${PORT}`);
-});</body></html>
+app.listen(PORT, () => {
+    console.log(`Layboka AI Production Server active on port ${PORT}`);
+});
